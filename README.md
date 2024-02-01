@@ -44,10 +44,10 @@
       - [Testing](#testing)
   3. [Database](#database)
   4. [Endpoints](#endpoints)
-      - [Query User](#endpoint-q-user)
-      - [Query Encounter](#endpoint-q-encounter)
-      - [Mutation New User](#endpoint-m-new-user)
-      - [Mutation New Encounter](#endpoint-m-new-encounter)
+      - [Query User](#q-user)
+      - [Query Encounter](#q-encounter)
+      - [Mutation New User](#m-new-user)
+      - [Mutation New Encounter](#m-new-encounter)
   5. [Roadmap](#roadmap)
   6. [Contributors](#contributors)
 
@@ -168,7 +168,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query User](#endpoint-q-user)
+### [Query User](#q-user)
 
 **`ENDPOINT BADGE HERE`**
 ##### Example Query
@@ -226,7 +226,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query Encounter](#endpoint-q-encounter)
+### [Query Encounter](#q-encounter)
 
 **`ENDPOINT BADGE HERE`**
 ##### Example Query
@@ -298,7 +298,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Mutation New User](#endpoint-m-new-user)
+### [Mutation New User](#m-new-user)
 
 **`ENDPOINT BADGE HERE`**
 ##### Example Mutation
@@ -344,7 +344,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Mutation New Encounter](#endpoint-m-new-encounter)
+### [Mutation New Encounter](#m-new-encounter)
 
 **`ENDPOINT BADGE HERE`**
 ##### Example Mutation
