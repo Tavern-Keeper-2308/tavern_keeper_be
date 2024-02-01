@@ -44,8 +44,10 @@
       - [Testing](#testing)
   3. [Database](#database)
   4. [Endpoints](#endpoints)
-      - [ENDPOINT NAME HERE](#endpoint-1)
-      - [ENDPOINT NAME HERE](#endpoint-2)
+      - [Query User](#endpoint-q-user)
+      - [Query Encounter](#endpoint-q-encounter)
+      - [Mutation New User](#endpoint-m-new-user)
+      - [Mutation New Encounter](#endpoint-m-new-encounter)
   5. [Roadmap](#roadmap)
   6. [Contributors](#contributors)
 
@@ -137,11 +139,15 @@ To get a local copy up and running follow these simple example steps.
 <!-- ENDPOINTS -->
 ## Endpoints
 
-### [INSERT-ENDPOINT-NAME-HERE](#endpoint-1)
+### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
 
 **`ENDPOINT BADGE HERE`**
-##### Example Query
+##### Example Query/Mutation (MAKE SURE TO DELETE ONE THAT IT NOT IS)
+```graphql
+INSERT-QUERY-HERE
 ```
+##### Example GraphQL Variables
+```graphql
 INSERT-QUERY-HERE
 ```
 ##### Example Response
@@ -151,7 +157,272 @@ INSERT-JSON-RESPONSE-HERE
 #### Error Handling
 ##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
 ##### Example Query
+```graphql
+INSERT-QUERY-HERE
 ```
+##### Example Response
+```json
+INSERT-JSON-RESPONSE-HERE
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### [Query User](#endpoint-q-user)
+
+**`ENDPOINT BADGE HERE`**
+##### Example Query
+```graphql
+query getUser($id: Integer!) {
+    queryUsers (byId: $id) {
+        id
+        username
+        password
+        encounters {
+            encounter_id
+        }
+    }
+}
+```
+##### Example GraphQL Variables
+```graphql
+{
+    "id": 55
+}
+```
+##### Example Response
+```json
+{
+    "data": {
+        "queryUsers": [
+            {
+                "'id": 55,
+                "username": "Shrek",
+                "password": "password123"
+                "encounters": [
+                    {
+                        "encounter_id": 3
+                    },
+                    {
+                        "encounter_id": 5
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+#### Error Handling
+##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
+##### Example Query
+```graphql
+INSERT-QUERY-HERE
+```
+##### Example Response
+```json
+INSERT-JSON-RESPONSE-HERE
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### [Query Encounter](#endpoint-q-encounter)
+
+**`ENDPOINT BADGE HERE`**
+##### Example Query
+```graphql
+query getEncounter($id: Integer!) {
+    queryEncounters (byId: $id) {
+        id
+        copper
+        silver
+        gold
+        platinum
+        electrum
+        encounter_loots {
+            item_name
+        }
+        encounter_monsters {
+            monster_name
+        }
+    }
+}
+```
+##### Example GraphQL Variables
+```graphql
+{
+    "id": 55
+}
+```
+##### Example Response
+```json
+{
+    "data": {
+        "queryEncounters": [
+            {
+                "'id": 55,
+                "copper": "1",
+                "silver": "1",
+                "gold": "1",
+                "platinum": "1",
+                "electrum": "1"
+                "encounter_loots": [
+                    {
+                        "item_name": "Longbow"
+                    },
+                    {
+                        "item_name": "Greataxe"
+                    }
+                ]
+                "encounter_monsters": [
+                    {
+                        "monster_name": "Beholder"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+#### Error Handling
+##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
+##### Example Query
+```graphql
+INSERT-QUERY-HERE
+```
+##### Example Response
+```json
+INSERT-JSON-RESPONSE-HERE
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### [Mutation New User](#endpoint-m-new-user)
+
+**`ENDPOINT BADGE HERE`**
+##### Example Mutation
+```graphql
+mutation {
+    createUser(input: {
+        username: "Shrek",
+        password: "password123"
+    }) {
+        user {
+            id
+            username
+        }
+        errors
+    }
+}
+```
+##### Example Response
+```json
+{
+    "data": {
+        "createUser": {
+            "user": {
+                "id": "55",
+                "username": "Shrek"
+            },
+            "errors": []
+        }
+    }
+}
+```
+#### Error Handling
+##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
+##### Example Mutation
+```graphql
+INSERT-QUERY-HERE
+```
+##### Example Response
+```json
+INSERT-JSON-RESPONSE-HERE
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### [Mutation New Encounter](#endpoint-m-new-encounter)
+
+**`ENDPOINT BADGE HERE`**
+##### Example Mutation
+```graphql
+mutation {
+    createEncounter(input: {
+        copper: 1,
+        silver: 1,
+        gold: 1,
+        platinum: 1,
+        electrum: 1,
+        encounter_loots: [
+            {
+                item_name: "Longbow"
+            },
+            {
+                item_name: "Greataxe"
+            }
+        ],
+        encounter_monsters: [
+            {
+                monster_name: "Beholder"
+            }
+        ]
+    }) {
+        encounter {
+            id
+            copper
+            silver
+            gold
+            platinum
+            electrum
+            encounter_loots {
+                item_name
+            }
+            encounter_monsters {
+                monster_name
+            }
+        }
+        errors
+    }
+}
+```
+##### Example Response
+```json
+{
+    "data": {
+        "createEncounter": {
+            "encounter": {
+                "id": 55,
+                "copper": "1",
+                "silver": "1",
+                "gold": "1",
+                "platinum": "1",
+                "electrum": "1",
+                "encounter_loots": [
+                    {
+                        "item_name": "Longbow"
+                    },
+                    {
+                        "item_name": "Greataxe"
+                    }
+                ],
+                "encounter_monsters": [
+                    {
+                        "monster_name": "Beholder"
+                    }
+                ],
+            },
+            "errors": []
+        }
+    }
+}
+```
+#### Error Handling
+##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
+##### Example Query
+```graphql
 INSERT-QUERY-HERE
 ```
 ##### Example Response
