@@ -44,10 +44,10 @@
       - [Testing](#testing)
   3. [Database](#database)
   4. [Endpoints](#endpoints)
-      - [Query User](#q-user)
-      - [Query Encounter](#q-encounter)
-      - [Mutation New User](#m-new-user)
-      - [Mutation New Encounter](#m-new-encounter)
+      - [Query User](#query-user)
+      - [Query Encounter](#query-encounter)
+      - [Mutation New User](#mutation-new-user)
+      - [Mutation New Encounter](#mutation-new-encounter)
   5. [Roadmap](#roadmap)
   6. [Contributors](#contributors)
 
@@ -168,7 +168,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query User](#q-user)
+### [Query User](#query-user)
 
 **`ENDPOINT BADGE HERE`**
 ##### Example Query
@@ -226,8 +226,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query Encounter](#q-encounter)
-
+### [Query Encounter](#query-encounter)
 **`ENDPOINT BADGE HERE`**
 ##### Example Query
 ```graphql
@@ -298,8 +297,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Mutation New User](#m-new-user)
-
+### [Mutation New User](#mutation-new-user)
 **`ENDPOINT BADGE HERE`**
 ##### Example Mutation
 ```graphql
@@ -344,8 +342,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Mutation New Encounter](#m-new-encounter)
-
+### [Mutation New Encounter](#mutation-new-encounter)
 **`ENDPOINT BADGE HERE`**
 ##### Example Mutation
 ```graphql
