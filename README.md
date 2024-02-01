@@ -102,23 +102,11 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Get an API Key at [INSERT-API-LOCATION-PATH-HERE](INSERT-API-LOCATION-PATH-HERE)
-
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/Tavern-Keeper-2308/tavern_keeper_be.git
    ```
-3. Enter your API
-  Terminal
-   ```sh
-   EDITOR="code --wait" rails credentials:edit
-   ```
-    In editor pop up
-    ```ruby
-    weather_api:
-      key: <YOUR API KEY>
-    ```
-4. Gem Bundle
+2. Gem Bundle
    ```sh
     bundle
    ```
@@ -130,7 +118,10 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Testing
-#### INSERT TESTING INSTRUCTIONS AND % HERE
+1. Run test suite
+   ```sh
+   bundle exec rspec
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
