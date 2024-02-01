@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="INSERT-GITHUB-REPO-LINK">
+  <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
