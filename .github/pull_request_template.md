@@ -7,13 +7,6 @@ _add any screenshots that might be useful to whomever is reviewing this PR_
 # Notes
 _anything else that doesn't fit in the above categories, but is still important to call out_
 
-# Type of change
-- [ ] fix
-- [ ] feat
-- [ ] test
-- [ ] refactor
-- [ ] docs
-
 # Checklist
 - [ ] My PR has an appropriately descriptive and concise title.
 - [ ] My code follows the Turing Style Guides and best practices.
