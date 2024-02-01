@@ -189,7 +189,7 @@ query getUser($id: Integer!) {
             {
                 "'id": 55,
                 "username": "Shrek",
-                "password": "password123"
+                "password": "password123",
                 "encounters": [
                     {
                         "encounter_id": 3
@@ -255,7 +255,7 @@ query getEncounter($id: Integer!) {
                 "silver": "1",
                 "gold": "1",
                 "platinum": "1",
-                "electrum": "1"
+                "electrum": "1",
                 "encounter_loots": [
                     {
                         "item_name": "Longbow"
@@ -263,7 +263,7 @@ query getEncounter($id: Integer!) {
                     {
                         "item_name": "Greataxe"
                     }
-                ]
+                ],
                 "encounter_monsters": [
                     {
                         "monster_name": "Beholder"
@@ -400,7 +400,7 @@ mutation {
                     {
                         "monster_name": "Beholder"
                     }
-                ],
+                ]
             },
             "errors": []
         }
