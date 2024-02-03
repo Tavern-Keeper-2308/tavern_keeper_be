@@ -122,9 +122,6 @@ GEM
       activesupport (>= 3.0)
       graphql
     hashdiff (1.1.0)
-    httparty (0.21.0)
-      mini_mime (>= 1.0.0)
-      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -144,7 +141,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.21.2)
     msgpack (1.7.2)
-    multi_xml (0.6.0)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
@@ -290,7 +286,6 @@ DEPENDENCIES
   graphiql-rails
   graphlient
   graphql
-  httparty
   pg (~> 1.1)
   pry
   puma (>= 5.0)
