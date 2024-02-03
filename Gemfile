@@ -36,6 +36,7 @@ gem "bootsnap", require: false
 # gem "rack-cors"
 gem 'httparty'
 gem 'faraday'
+gem 'graphlient'
 gem 'graphql'
 
 group :development, :test do
