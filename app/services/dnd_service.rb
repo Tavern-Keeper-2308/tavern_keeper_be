@@ -18,4 +18,44 @@ class DndService
       }
     GRAPHQL
   end
+
+  def query_monster_details(index)
+    variables = { index: index }
+    response = dnd_client.query <<~GRAPHQL
+      query($index: String) {
+        monster(index: $index) {
+          index
+          name
+          image
+          size
+          type
+          alignment
+          armor_class {
+            value
+          }
+          speed {
+            walk
+            swim
+          }
+          hit_points
+          strength
+          dexterity
+          constitution
+          intelligence
+          wisdom
+          charisma
+          languages
+          special_abilities {
+            desc
+          }
+          actions {
+            desc
+          }
+          legendary_actions {
+            desc
+          }
+        }
+      }
+    GRAPHQL
+  end
 end

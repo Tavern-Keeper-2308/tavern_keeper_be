@@ -171,14 +171,17 @@ http_interactions:
         URL that specifies the behavior of this scalar.","type":{"kind":"NON_NULL","name":null,"ofType":{"kind":"SCALAR","name":"String","ofType":null}},"defaultValue":null}]}]}}}
 
         '
-  recorded_at: Sat, 03 Feb 2024 16:15:21 GMT
+  recorded_at: Sat, 03 Feb 2024 16:15:22 GMT
 - request:
     method: post
     uri: https://www.dnd5eapi.co/graphql
     body:
       encoding: UTF-8
-      string: '{"query":"query GraphQL__Client__OperationDefinition_33320 {\n  monsters
-        {\n    index\n    name\n  }\n}","operationName":"GraphQL__Client__OperationDefinition_33320","variables":{}}'
+      string: '{"query":"query GraphQL__Client__OperationDefinition_53200($index:
+        String) {\n  monster(index: $index) {\n    index\n    name\n    image\n    size\n    type\n    alignment\n    armor_class
+        {\n      value\n    }\n    speed {\n      walk\n      swim\n    }\n    hit_points\n    strength\n    dexterity\n    constitution\n    intelligence\n    wisdom\n    charisma\n    languages\n    special_abilities
+        {\n      desc\n    }\n    actions {\n      desc\n    }\n    legendary_actions
+        {\n      desc\n    }\n  }\n}","operationName":"GraphQL__Client__OperationDefinition_53200","variables":{}}'
     headers:
       Content-Type:
       - application/json
@@ -196,9 +199,9 @@ http_interactions:
       Server:
       - Cowboy
       Report-To:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706976921&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=eU681IsEyXDLlA3%2BydMpDje338XRN5%2FNmiTnN%2Bu4hcw%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706976922&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=sdMmImfZxMoPBN6ywsgGk1yRA5ThldFfsfvv9g%2BZ5ow%3D"}]}'
       Reporting-Endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1706976921&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=eU681IsEyXDLlA3%2BydMpDje338XRN5%2FNmiTnN%2Bu4hcw%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1706976922&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=sdMmImfZxMoPBN6ywsgGk1yRA5ThldFfsfvv9g%2BZ5ow%3D
       Nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       Connection:
@@ -212,55 +215,49 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '9999'
       Date:
-      - Sat, 03 Feb 2024 16:15:21 GMT
+      - Sat, 03 Feb 2024 16:15:22 GMT
       X-Ratelimit-Reset:
-      - '1706976922'
+      - '1706976923'
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4566'
+      - '2416'
       Etag:
-      - W/"11d6-XIUfFg6UoH3bjRaGDmq7SaLHw3w"
+      - W/"970-SrbYwbAerfdT1VmgbrF3BAEYWJU"
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"monsters":[{"index":"adult-gold-dragon","name":"Adult Gold
-        Dragon"},{"index":"ancient-brass-dragon","name":"Ancient Brass Dragon"},{"index":"aboleth","name":"Aboleth"},{"index":"adult-white-dragon","name":"Adult
-        White Dragon"},{"index":"adult-bronze-dragon","name":"Adult Bronze Dragon"},{"index":"balor","name":"Balor"},{"index":"black-pudding","name":"Black
-        Pudding"},{"index":"bronze-dragon-wyrmling","name":"Bronze Dragon Wyrmling"},{"index":"deer","name":"Deer"},{"index":"animated-armor","name":"Animated
-        Armor"},{"index":"ankheg","name":"Ankheg"},{"index":"bulette","name":"Bulette"},{"index":"cockatrice","name":"Cockatrice"},{"index":"commoner","name":"Commoner"},{"index":"cloud-giant","name":"Cloud
-        Giant"},{"index":"assassin","name":"Assassin"},{"index":"axe-beak","name":"Axe
-        Beak"},{"index":"berserker","name":"Berserker"},{"index":"barbed-devil","name":"Barbed
-        Devil"},{"index":"archmage","name":"Archmage"},{"index":"crocodile","name":"Crocodile"},{"index":"chuul","name":"Chuul"},{"index":"cultist","name":"Cultist"},{"index":"ancient-green-dragon","name":"Ancient
-        Green Dragon"},{"index":"adult-silver-dragon","name":"Adult Silver Dragon"},{"index":"behir","name":"Behir"},{"index":"bandit","name":"Bandit"},{"index":"brass-dragon-wyrmling","name":"Brass
-        Dragon Wyrmling"},{"index":"black-dragon-wyrmling","name":"Black Dragon Wyrmling"},{"index":"cat","name":"Cat"},{"index":"crab","name":"Crab"},{"index":"awakened-tree","name":"Awakened
-        Tree"},{"index":"androsphinx","name":"Androsphinx"},{"index":"bat","name":"Bat"},{"index":"centaur","name":"Centaur"},{"index":"copper-dragon-wyrmling","name":"Copper
-        Dragon Wyrmling"},{"index":"darkmantle","name":"Darkmantle"},{"index":"ancient-white-dragon","name":"Ancient
-        White Dragon"},{"index":"black-bear","name":"Black Bear"},{"index":"ancient-silver-dragon","name":"Ancient
-        Silver Dragon"},{"index":"awakened-shrub","name":"Awakened Shrub"},{"index":"badger","name":"Badger"},{"index":"azer","name":"Azer"},{"index":"blink-dog","name":"Blink
-        Dog"},{"index":"bugbear","name":"Bugbear"},{"index":"chain-devil","name":"Chain
-        Devil"},{"index":"clay-golem","name":"Clay Golem"},{"index":"cult-fanatic","name":"Cult
-        Fanatic"},{"index":"adult-green-dragon","name":"Adult Green Dragon"},{"index":"acolyte","name":"Acolyte"},{"index":"bearded-devil","name":"Bearded
-        Devil"},{"index":"adult-red-dragon","name":"Adult Red Dragon"},{"index":"blood-hawk","name":"Blood
-        Hawk"},{"index":"constrictor-snake","name":"Constrictor Snake"},{"index":"death-dog","name":"Death
-        Dog"},{"index":"couatl","name":"Couatl"},{"index":"adult-brass-dragon","name":"Adult
-        Brass Dragon"},{"index":"ancient-bronze-dragon","name":"Ancient Bronze Dragon"},{"index":"air-elemental","name":"Air
-        Elemental"},{"index":"boar","name":"Boar"},{"index":"ancient-blue-dragon","name":"Ancient
-        Blue Dragon"},{"index":"ancient-copper-dragon","name":"Ancient Copper Dragon"},{"index":"ape","name":"Ape"},{"index":"blue-dragon-wyrmling","name":"Blue
-        Dragon Wyrmling"},{"index":"adult-copper-dragon","name":"Adult Copper Dragon"},{"index":"cloaker","name":"Cloaker"},{"index":"ancient-gold-dragon","name":"Ancient
-        Gold Dragon"},{"index":"ancient-red-dragon","name":"Ancient Red Dragon"},{"index":"camel","name":"Camel"},{"index":"chimera","name":"Chimera"},{"index":"adult-black-dragon","name":"Adult
-        Black Dragon"},{"index":"ancient-black-dragon","name":"Ancient Black Dragon"},{"index":"baboon","name":"Baboon"},{"index":"bone-devil","name":"Bone
-        Devil"},{"index":"adult-blue-dragon","name":"Adult Blue Dragon"},{"index":"basilisk","name":"Basilisk"},{"index":"bandit-captain","name":"Bandit
-        Captain"},{"index":"brown-bear","name":"Brown Bear"},{"index":"dragon-turtle","name":"Dragon
-        Turtle"},{"index":"eagle","name":"Eagle"},{"index":"dryad","name":"Dryad"},{"index":"flying-snake","name":"Flying
-        Snake"},{"index":"dire-wolf","name":"Dire Wolf"},{"index":"giant-eagle","name":"Giant
-        Eagle"},{"index":"deva","name":"Deva"},{"index":"giant-lizard","name":"Giant
-        Lizard"},{"index":"giant-weasel","name":"Giant Weasel"},{"index":"imp","name":"Imp"},{"index":"killer-whale","name":"Killer
-        Whale"},{"index":"ghast","name":"Ghast"},{"index":"hawk","name":"Hawk"},{"index":"dretch","name":"Dretch"},{"index":"druid","name":"Druid"},{"index":"flying-sword","name":"Flying
-        Sword"},{"index":"giant-crocodile","name":"Giant Crocodile"},{"index":"giant-vulture","name":"Giant
-        Vulture"},{"index":"gibbering-mouther","name":"Gibbering Mouther"},{"index":"griffon","name":"Griffon"},{"index":"lamia","name":"Lamia"},{"index":"ghoul","name":"Ghoul"}]}}
+      string: '{"data":{"monster":{"index":"adult-gold-dragon","name":"Adult Gold
+        Dragon","image":null,"size":"HUGE","type":"DRAGON","alignment":"lawful good","armor_class":[{"value":19}],"speed":{"walk":"40
+        ft.","swim":"40 ft."},"hit_points":256,"strength":27,"dexterity":14,"constitution":25,"intelligence":16,"wisdom":15,"charisma":24,"languages":"Common,
+        Draconic","special_abilities":[{"desc":"The dragon can breathe air and water."},{"desc":"If
+        the dragon fails a saving throw, it can choose to succeed instead."}],"actions":[{"desc":"The
+        dragon can use its Frightful Presence. It then makes three attacks: one with
+        its bite and two with its claws."},{"desc":"Melee Weapon Attack: +14 to hit,
+        reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage."},{"desc":"Melee
+        Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing
+        damage."},{"desc":"Melee Weapon Attack: +14 to hit, reach 15 ft., one target.
+        Hit: 17 (2d8 + 8) bludgeoning damage."},{"desc":"Each creature of the dragon''s
+        choice that is within 120 feet of the dragon and aware of it must succeed
+        on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature
+        can repeat the saving throw at the end of each of its turns, ending the effect
+        on itself on a success. If a creature''s saving throw is successful or the
+        effect ends for it, the creature is immune to the dragon''s Frightful Presence
+        for the next 24 hours."},{"desc":"The dragon uses one of the following breath
+        weapons.\nFire Breath. The dragon exhales fire in a 60-foot cone. Each creature
+        in that area must make a DC 21 Dexterity saving throw, taking 66 (12d10) fire
+        damage on a failed save, or half as much damage on a successful one.\nWeakening
+        Breath. The dragon exhales gas in a 60-foot cone. Each creature in that area
+        must succeed on a DC 21 Strength saving throw or have disadvantage on Strength-based
+        attack rolls, Strength checks, and Strength saving throws for 1 minute. A
+        creature can repeat the saving throw at the end of each of its turns, ending
+        the effect on itself on a success."}],"legendary_actions":[{"desc":"The dragon
+        makes a Wisdom (Perception) check."},{"desc":"The dragon makes a tail attack."},{"desc":"The
+        dragon beats its wings. Each creature within 10 ft. of the dragon must succeed
+        on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage
+        and be knocked prone. The dragon can then fly up to half its flying speed."}]}}}
 
         '
-  recorded_at: Sat, 03 Feb 2024 16:15:21 GMT
+  recorded_at: Sat, 03 Feb 2024 16:15:22 GMT
 recorded_with: VCR 6.2.0
