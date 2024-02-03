@@ -15,7 +15,7 @@ require "action_cable/engine"
 # require "rails/test_unit/railtie"
 
 # Sprockets used to compile and serve web assets for Graphiql
-require "sprockets/railstie"
+# require "sprockets/railstie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
