@@ -12,8 +12,8 @@ class DndService
     response = dnd_client.query <<~GRAPHQL
       query {
         monsters {
-          name
           index
+          name
         }
       }
     GRAPHQL
