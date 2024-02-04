@@ -8,7 +8,7 @@ class DndService
     )
   end
   
-  def query_monster_filter
+  def query_monster_list
     response = dnd_client.query <<~GRAPHQL
       query {
         monsters {
@@ -30,6 +30,7 @@ class DndService
         monster(index: $index) {
           index
           name
+          challenge_rating
           image
           size
           type

@@ -7,9 +7,9 @@ describe DndService, type: :service do
       expect(service.dnd_client).to be_a(Graphlient::Client)
     end
 
-    it '#query_monster_filter, returns all monsters, name and index only' do
+    it '#query_monster_list, returns all monsters, name and index only' do
       service = DndService.new
-      response = service.query_monster_filter
+      response = service.query_monster_list
 
       error_messages = response.errors.messages
       expect(error_messages.empty?).to eq(true)
@@ -37,6 +37,7 @@ describe DndService, type: :service do
       monster = response.data.monster
       expect(monster.index).to be_a(String)
       expect(monster.name).to be_a(String)
+      expect(monster.challenge_rating).to be_a(Integer).or be_a(Float)
       expect(monster.image).to be_a(String).or be_nil
       expect(monster.size).to be_a(String)
       expect(monster.type).to be_a(String)
