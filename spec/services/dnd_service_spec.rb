@@ -42,6 +42,7 @@ describe DndService, type: :service do
       expect(monster.armor_class.first.value).to be_a(Integer) 
 
       expect(monster.speed.walk).to be_a(String).or be_nil #If query has TWO different Hash items, it can work as an Object
+      expect(monster.speed.fly).to be_a(String).or be_nil #If query has TWO different Hash items, it can work as an Object
       expect(monster.speed.swim).to be_a(String).or be_nil
 
       expect(monster.hit_points).to be_a(Integer)

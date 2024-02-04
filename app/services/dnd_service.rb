@@ -35,6 +35,7 @@ class DndService
           }
           speed {
             walk
+            fly
             swim
           }
           hit_points
