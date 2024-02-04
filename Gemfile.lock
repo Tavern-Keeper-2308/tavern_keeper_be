@@ -114,7 +114,13 @@ GEM
     graphiql-rails (1.9.0)
       railties
       sprockets-rails
+    graphlient (0.8.0)
+      faraday (~> 2.0)
+      graphql-client
     graphql (2.2.7)
+    graphql-client (0.19.0)
+      activesupport (>= 3.0)
+      graphql
     hashdiff (1.1.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -278,6 +284,7 @@ DEPENDENCIES
   faker
   faraday
   graphiql-rails
+  graphlient
   graphql
   pg (~> 1.1)
   pry
