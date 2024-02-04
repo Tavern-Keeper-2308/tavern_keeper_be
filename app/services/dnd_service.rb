@@ -8,15 +8,20 @@ class DndService
     )
   end
   
-  def query_monster_names
+  def query_monster_filter
     response = dnd_client.query <<~GRAPHQL
       query {
         monsters {
           index
           name
+          challenge_rating
+          size
+          type
+          alignment
         }
       }
     GRAPHQL
+    require 'pry'; binding.pry
   end
 
   def query_monster_details(index)
