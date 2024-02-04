@@ -85,7 +85,12 @@ RSpec.describe Monster do
     expect(@monster.type).to eq('ABERRATION')
     expect(@monster.alignment).to eq('lawful evil')
     expect(@monster.armor_class).to eq(17)
-    expect(@monster.speed).to eq({ 'walk' => '10 ft.', 'swim' => '40 ft.' })
+    expect(@monster.speed).to eq(
+      { 
+        'walk' => '10 ft.', 
+        'swim' => '40 ft.' 
+      }
+    )
     expect(@monster.hit_points).to eq(135)
     expect(@monster.strength).to eq(21)
     expect(@monster.dexterity).to eq(9)
@@ -129,7 +134,12 @@ RSpec.describe Monster do
         'desc' => 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature\'s skin becomes translucent and slimy, the creature can\'t regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed.'
       }
     )
-    expect(@monster.actions[2]).to eq({ 'name' => 'Tail', 'desc' => 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) bludgeoning damage.' })
+    expect(@monster.actions[2]).to eq(
+      { 
+        'name' => 'Tail', 
+        'desc' => 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) bludgeoning damage.' 
+      }
+    )
     expect(@monster.actions[3]).to eq(
       {
         'name' => 'Enslave',
