@@ -12,8 +12,9 @@ class Monster
     @size = monster_data['size']
     @type = monster_data['type']
     @alignment = monster_data['alignment']
-    @armor_class = monster_data['armor_class'].first['value']
-    @speed = monster_data['speed']&.transform_keys(&:to_s)
+    # @armor_class = monster_data['armor_class'].first['value']
+    @armor_class = monster_data['armor_class']&.first&.fetch('value', nil)
+    @speed = monster_data['speed']
     @hit_points = monster_data['hit_points']
     @strength = monster_data['strength']
     @dexterity = monster_data['dexterity']
