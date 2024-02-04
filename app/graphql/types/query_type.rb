@@ -27,5 +27,20 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    
+    field :monsters, [Types::MonsterType], null: false,
+      description: "A complete list of Monsters" 
+      def monsters
+        MonsterFacade.monster_list
+      end
+
+    field :monster, [Types::MonsterType], null: true,
+      description: "A complete list of Monsters" do
+        argument :index, String, required: true
+      end
+      def monster(index:)
+        MonsterFacade.single_monster_details(index)
+      end   
   end
 end

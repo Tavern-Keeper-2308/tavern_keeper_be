@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe MonsterFacade, type: :facade do
   describe 'MonsterFacade instance methods', :vcr do
     it '#monster_list' do
-      facade = MonsterFacade.new
+      facade = MonsterFacade
       monsters = facade.monster_list
-
+    
       monsters.each do |monster|
         expect(monster).to be_a(Monster)
 
@@ -16,8 +16,7 @@ RSpec.describe MonsterFacade, type: :facade do
         expect(monster.name).to be_a(String)
 
         expect(monster).to respond_to(:challenge_rating)
-        expect(monster.challenge_rating).to be_a(Integer).or be_a(Float)
-
+        expect(monster.challenge_rating).to be_a(String)
         expect(monster).to respond_to(:size)
         expect(monster.size).to be_a(String)
 
@@ -30,8 +29,8 @@ RSpec.describe MonsterFacade, type: :facade do
     end
 
     it '#single_monster_details(index)' do
-      facade = MonsterFacade.new
-      monster = facade.single_monster_details('aboleth')
+      facade = MonsterFacade
+      monster = facade.single_monster_details('aboleth').first
 
       expect(monster).to be_a(Monster)
 
@@ -42,7 +41,7 @@ RSpec.describe MonsterFacade, type: :facade do
       expect(monster.name).to be_a(String)
 
       expect(monster).to respond_to(:challenge_rating)
-      expect(monster.challenge_rating).to be_a(Integer).or be_a(Float)
+      expect(monster.challenge_rating).to be_a(String)
 
       expect(monster).to respond_to(:size)
       expect(monster.size).to be_a(String)
@@ -54,7 +53,7 @@ RSpec.describe MonsterFacade, type: :facade do
       expect(monster.alignment).to be_a(String)
       
       expect(monster).to respond_to(:armor_class)
-      expect(monster.armor_class).to be_a(Integer)
+      expect(monster.armor_class).to be_a(String)
 
       expect(monster).to respond_to(:speed)
       expect(monster.speed).to be_a(Hash)

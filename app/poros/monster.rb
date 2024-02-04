@@ -7,12 +7,12 @@ class Monster
   def initialize(monster_data)
     @index = monster_data['index']
     @name = monster_data['name']
-    @challenge_rating = monster_data['challenge_rating']
+    @challenge_rating = monster_data['challenge_rating'].to_s
     @image = monster_data['image']
     @size = monster_data['size']
     @type = monster_data['type']
     @alignment = monster_data['alignment']
-    @armor_class = monster_data['armor_class']&.first&.fetch('value', nil)
+    @armor_class = monster_data['armor_class']&.first&.fetch('value', nil).to_s
     @speed = monster_data['speed']
     @hit_points = monster_data['hit_points']
     @strength = monster_data['strength']

@@ -84,7 +84,7 @@ RSpec.describe Monster do
     expect(@monster.size).to eq('LARGE')
     expect(@monster.type).to eq('ABERRATION')
     expect(@monster.alignment).to eq('lawful evil')
-    expect(@monster.armor_class).to eq(17)
+    expect(@monster.armor_class).to eq("17")
     expect(@monster.speed).to eq(
       { 
         'walk' => '10 ft.', 
