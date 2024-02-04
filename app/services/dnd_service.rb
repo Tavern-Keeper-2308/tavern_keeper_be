@@ -21,7 +21,6 @@ class DndService
         }
       }
     GRAPHQL
-    require 'pry'; binding.pry
   end
 
   def query_monster_details(index)
@@ -52,12 +51,15 @@ class DndService
           charisma
           languages
           special_abilities {
+            name
             desc
           }
           actions {
+            name
             desc
           }
           legendary_actions {
+            name
             desc
           }
         }

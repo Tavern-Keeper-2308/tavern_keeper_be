@@ -60,11 +60,13 @@ describe DndService, type: :service do
 
       expect(monster.special_abilities).to be_a(Array) #If query has multiple desc, it works as an Array
       monster.special_abilities.each do |ability|
+        expect(ability.name).to be_a(String)
         expect(ability.desc).to be_a(String)
       end
 
       expect(monster.actions).to be_a(Array)
       monster.actions.each do |action|
+        expect(action.name).to be_a(String)
         expect(action.desc).to be_a(String)
       end
 
@@ -72,6 +74,7 @@ describe DndService, type: :service do
       if !monster.legendary_actions.nil?
         expect(monster.legendary_actions).to be_a(Array)
         monster.legendary_actions.each do |sp_ability|
+          expect(sp_ability.name).to be_a(String)
           expect(sp_ability.desc).to be_a(String)
         end
       end
