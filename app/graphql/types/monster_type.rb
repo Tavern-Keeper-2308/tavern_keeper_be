@@ -20,7 +20,7 @@ module Types
     field :special_abilities, [Types::SpecialAbilityType]
     field :actions, [Types::ActionType]
     field :legendary_actions, [Types::LegendaryActionType]
-    field :proficiency, [Types::ProficiencyType]
+    field :proficiencies, [Types::ProficiencyType]
     field :damage_vulnerabilities, String
     field :damage_resistances, String
     field :damage_immunities, String
