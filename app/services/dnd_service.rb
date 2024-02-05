@@ -30,11 +30,7 @@ class DndService
         monster(index: $index) {
           index
           name
-          challenge_rating
-          image
           size
-          type
-          alignment
           armor_class {
             value
           }
@@ -50,7 +46,21 @@ class DndService
           intelligence
           wisdom
           charisma
-          languages
+          damage_vulnerabilities
+          damage_resistances
+          damage_immunities
+          proficiency_bonus
+          proficiencies {
+              proficiency {
+                  name
+              }
+              value
+          }
+          senses {
+              blindsight
+              darkvision
+              passive_perception
+          }
           special_abilities {
             name
             desc
