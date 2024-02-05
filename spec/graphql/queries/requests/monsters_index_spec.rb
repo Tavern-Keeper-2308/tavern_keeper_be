@@ -3,7 +3,7 @@ require 'rails_helper'
 module Queries
   module Monsters
     RSpec.describe Monsters, type: :request do
-      describe '.' do
+      describe 'monsters' do
         it 'returns all monsters', :vcr do
           post '/graphql', params: { query: query }
           json = JSON.parse(response.body)

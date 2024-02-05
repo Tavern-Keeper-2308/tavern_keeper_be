@@ -3,7 +3,7 @@ require 'rails_helper'
 module Queries
   module Monster
     RSpec.describe Monster, type: :request do
-      describe '.' do # Did we name this describe block '.' on purpose? Can this be changed to something more descriptive?
+      describe 'monster' do
         it 'returns monster details', :vcr do
           post '/graphql', params: { query: query, variables: { 'index': 'aboleth'} } # Variables are now in request params, explanaition below
           expect(response).to be_successful
