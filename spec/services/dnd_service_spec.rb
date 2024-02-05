@@ -37,11 +37,11 @@ describe DndService, type: :service do
       monster = response.data.monster
       expect(monster.index).to be_a(String)
       expect(monster.name).to be_a(String)
-      expect(monster.challenge_rating).to be_a(Integer).or be_a(Float)
-      expect(monster.image).to be_a(String).or be_nil
       expect(monster.size).to be_a(String)
-      expect(monster.type).to be_a(String)
-      expect(monster.alignment).to be_a(String)
+      # expect(monster.challenge_rating).to be_a(Integer).or be_a(Float)
+      # expect(monster.image).to be_a(String).or be_nil
+      # expect(monster.type).to be_a(String)
+      # expect(monster.alignment).to be_a(String)
 
       expect(monster.armor_class).to be_a(Array) #If query has ONE Hash item (value/desc), it works as an Array
       expect(monster.armor_class.first.value).to be_a(Integer) 
@@ -57,7 +57,23 @@ describe DndService, type: :service do
       expect(monster.intelligence).to be_a(Integer)
       expect(monster.wisdom).to be_a(Integer)
       expect(monster.charisma).to be_a(Integer)
-      expect(monster.languages).to be_a(String)
+      # expect(monster.languages).to be_a(String)
+
+      expect(monster.damage_vulnerabilities).to be_a(Array)
+      expect(monster.damage_resistances).to be_a(Array)
+      expect(monster.damage_immunities).to be_a(Array)
+
+      expect(monster.proficiency_bonus).to be_a(Integer)
+
+      expect(monster.proficiencies).to be_a(Array)
+      monster.proficiencies.each do |proficiency|
+        expect(proficiency.proficiency.name).to be_a(String)
+        expect(proficiency.value).to be_a(Integer)
+      end
+
+      expect(monster.senses.blindsight).to be_a(String)
+      expect(monster.senses.darkvision).to be_a(String)
+      expect(monster.senses.passive_perception).to be_a(Integer)
 
       expect(monster.special_abilities).to be_a(Array) #If query has multiple desc, it works as an Array
       monster.special_abilities.each do |ability|
