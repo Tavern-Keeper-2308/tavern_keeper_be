@@ -1,5 +1,5 @@
 class MonsterFacade
-  def monster_list
+  def self.monster_list
     service = DndService.new
     response = service.query_monster_list
     monsters_data = response.original_hash['data']['monsters']
@@ -8,11 +8,10 @@ class MonsterFacade
     end
   end
 
-  def single_monster_details(index)
+  def self.single_monster_details(index)
     service = DndService.new
     response = service.query_monster_details(index)
     monster_data = response.original_hash['data']['monster']
-
-    Monster.new(monster_data)
+    [Monster.new(monster_data)]
   end
 end
