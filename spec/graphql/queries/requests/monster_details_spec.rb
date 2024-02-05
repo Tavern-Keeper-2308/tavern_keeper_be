@@ -3,12 +3,16 @@ require 'rails_helper'
 module Queries
   module Monster
     RSpec.describe Monster, type: :request do
-      describe '.' do
+      describe '.' do # Did we name this describe block '.' on purpose? Can this be changed to something more descriptive?
         it 'returns monster details', :vcr do
-          post '/graphql', params: { query: query, variables: { 'index': 'aboleth'} }
+          post '/graphql', params: { query: query, variables: { 'index': 'aboleth'} } # Variables are now in request params, explanaition below
+          expect(response).to be_successful
+          expect(response.status).to eq(200)
+          expect(response).to have_http_status(:ok)
+
           json = JSON.parse(response.body)
           monster = json['data']['monster'].first
-        
+          
           expect(monster['index']).to be_a(String)
           expect(monster['name']).to be_a(String)
           expect(monster['size']).to be_a(String)
@@ -33,7 +37,7 @@ module Queries
       end
 
       def query
-        # variables = { 'index': index }
+        # variables = { 'index': index } ## Removed from here and put into the request parameters. While inspecting the controller action, I found params[:variables] to be blank with this syntax.
         <<~GQL
           query getMonster($index: String!) {
             monster(index: $index) {
