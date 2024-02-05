@@ -1,5 +1,5 @@
 module Types
-  class ProficienciesType < Types::BaseObject
+  class ProficiencyType < Types::BaseObject
     field :name, String
     field :value, String
   end
