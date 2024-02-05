@@ -35,9 +35,9 @@ module Types
         MonsterFacade.monster_list
       end
 
-    field :monster, [Types::MonsterType], null: true,
+    field :monster, [Types::MonsterType], null: false,
       description: "A complete list of Monsters" do
-        argument :index, String, required: true
+        argument :index, String
       end
       def monster(index:)
         MonsterFacade.single_monster_details(index)
