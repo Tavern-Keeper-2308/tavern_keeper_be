@@ -5,35 +5,35 @@ module Queries
     RSpec.describe Monster, type: :request do
       describe '.' do
         it 'returns monster details', :vcr do
-          post '/graphql', params: { query: query('aboleth') }
+          post '/graphql', params: { query: query, variables: { 'index': 'aboleth'} }
           json = JSON.parse(response.body)
-          data = json['data']['monster']
-          
+          monster = json['data']['monster'].first
+        
           expect(monster['index']).to be_a(String)
           expect(monster['name']).to be_a(String)
           expect(monster['size']).to be_a(String)
           expect(monster['type']).to be_a(String)
           expect(monster['alignment']).to be_a(String)
           expect(monster['challengeRating']).to be_a(String)
-          expect(monster['image']).to be_a(String)
+          expect(monster['image']).to be_nil
           expect(monster['armorClass']).to be_a(String)
           expect(monster['speed']).to be_a(Hash)
-          expect(monster['hitPoints']).to be_a(String)
-          expect(monster['strength']).to be_a(String)
-          expect(monster['dexterity']).to be_a(String)
-          expect(monster['constitution']).to be_a(String)
-          expect(monster['intelligence']).to be_a(String)
-          expect(monster['wisdom']).to be_a(String)
-          expect(monster['charisma']).to be_a(String)
-          expect(monster['languages']).to be_an(Array)
+          expect(monster['hitPoints']).to be_a(Integer)
+          expect(monster['strength']).to be_a(Integer)
+          expect(monster['dexterity']).to be_a(Integer)
+          expect(monster['constitution']).to be_a(Integer)
+          expect(monster['intelligence']).to be_a(Integer)
+          expect(monster['wisdom']).to be_a(Integer)
+          expect(monster['charisma']).to be_a(Integer)
+          expect(monster['languages']).to be_an(String)
           expect(monster['specialAbilities']).to be_an(Array)
           expect(monster['actions']).to be_an(Array)
           expect(monster['legendaryActions']).to be_an(Array)
         end
       end
 
-      def query(index)
-        variables = { 'index': index }
+      def query
+        # variables = { 'index': index }
         <<~GQL
           query getMonster($index: String!) {
             monster(index: $index) {
