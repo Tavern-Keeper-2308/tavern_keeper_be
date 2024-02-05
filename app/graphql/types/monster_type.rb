@@ -8,7 +8,7 @@ module Types
     field :type, String
     field :alignment, String
     field :armor_class, String
-    field :speed, [Types::SpeedType]
+    field :speed, Types::SpeedType
     field :hit_points, Int
     field :strength, Int
     field :dexterity, Int
@@ -24,7 +24,7 @@ module Types
     field :damage_vulnerabilities, String
     field :damage_resistances, String
     field :damage_immunities, String
-    field :senses, [Types::SenseType]
+    field :senses, Types::SenseType
     field :proficiency_bonus, Int
   end
 end

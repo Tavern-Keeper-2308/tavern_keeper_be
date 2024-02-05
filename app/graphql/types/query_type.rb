@@ -33,6 +33,6 @@ module Types
       end
       def monster(index:)
         MonsterFacade.single_monster_details(index)
-      end   
+      end
   end
 end
