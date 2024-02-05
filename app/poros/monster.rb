@@ -2,7 +2,8 @@ class Monster
   attr_reader :index, :name, :challenge_rating, :image, :size, :type, :alignment,
               :armor_class, :speed, :hit_points, :strength, :dexterity, :constitution,
               :intelligence, :wisdom, :charisma, :languages, :special_abilities,
-              :actions, :legendary_actions
+              :actions, :legendary_actions, :proficiencies, :senses, :damage_immunities,
+              :damage_resistances, :damage_vulnerabilities, :condition_immunities, :proficiency_bonus
 
   def initialize(monster_data)
     @index = monster_data['index']
@@ -25,5 +26,22 @@ class Monster
     @special_abilities = monster_data['special_abilities']
     @actions = monster_data['actions']
     @legendary_actions = monster_data['legendary_actions']
+    @proficiencies = monster_proficiencies(monster_data['proficiencies'])
+    @senses = monster_data['senses']
+    @damage_immunities = monster_data['damage_immunities']
+    @damage_immunities = monster_data['condition_immunities']
+    @damage_immunities = monster_data['damage_resistances']
+    @damage_immunities = monster_data['damage_vulnerabilities']
+    @proficiency_bonus = monster_data['proficiency_bonus']
+  end
+  
+  private
+  
+  def monster_proficiencies(raw_proficiency_data)
+    if !raw_proficiency_data.nil?
+      raw_proficiency_data.map do |proficiency|
+        { 'value' => proficiency['value'], 'name' => proficiency['proficiency']['name']}
+      end 
+    end
   end
 end
