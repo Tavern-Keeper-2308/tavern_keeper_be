@@ -29,9 +29,9 @@ class Monster
     @proficiencies = monster_proficiencies(monster_data['proficiencies'])
     @senses = monster_data['senses']
     @damage_immunities = monster_data['damage_immunities']
-    @damage_immunities = monster_data['condition_immunities']
-    @damage_immunities = monster_data['damage_resistances']
-    @damage_immunities = monster_data['damage_vulnerabilities']
+    @condition_immunities = monster_data['condition_immunities']
+    @damage_resistances = monster_data['damage_resistances']
+    @damage_vulnerabilities = monster_data['damage_vulnerabilities']
     @proficiency_bonus = monster_data['proficiency_bonus']
   end
   
