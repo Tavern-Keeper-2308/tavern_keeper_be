@@ -96,5 +96,4 @@ RSpec.describe MonsterFacade, type: :facade do
       expect(monster.legendary_actions).to be_a(Array)
     end
   end
-
 end
