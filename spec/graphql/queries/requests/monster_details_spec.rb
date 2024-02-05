@@ -33,6 +33,7 @@ module Queries
           expect(monster['specialAbilities']).to be_an(Array)
           expect(monster['actions']).to be_an(Array)
           expect(monster['legendaryActions']).to be_an(Array)
+          expect(monster['conditionImmunities']).to be_an(Array)
         end
       end
 
@@ -73,6 +74,9 @@ module Queries
               legendaryActions {
                 name
                 desc
+              }
+              conditionImmunities {
+                name
               }
             }
           }

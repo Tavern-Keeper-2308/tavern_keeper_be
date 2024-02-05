@@ -35,6 +35,7 @@ describe DndService, type: :service do
       expect(error_messages.empty?).to eq(true)
 
       monster = response.data.monster
+      
       expect(monster.index).to be_a(String)
       expect(monster.name).to be_a(String)
       expect(monster.size).to be_a(String)
@@ -94,6 +95,11 @@ describe DndService, type: :service do
           expect(sp_ability.name).to be_a(String)
           expect(sp_ability.desc).to be_a(String)
         end
+      end
+
+      expect(monster.condition_immunities).to be_a(Array)
+      monster.condition_immunities.each do |immunity|
+        expect(immunity).to be_a(String)
       end
     end 
   end

@@ -73,6 +73,9 @@ class DndService
             name
             desc
           }
+          condition_immunities {
+            name
+          }
         }
       }
     GRAPHQL
