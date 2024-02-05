@@ -25,6 +25,6 @@ module Types
     field :damage_resistances, String
     field :damage_immunities, String
     field :senses, [Types::SenseType]
-    field :proficiency_bonus, String
+    field :proficiency_bonus, Int
   end
 end
