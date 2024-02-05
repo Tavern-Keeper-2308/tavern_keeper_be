@@ -36,9 +36,9 @@ http_interactions:
       Server:
       - Cowboy
       Report-To:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707096649&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=3cqO6Z0gZi%2BmQFwOU5050m9UX1odWT31Rj342zOTCyY%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707170393&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=wvSm8xbc4Ndv3wcEm7C0zviQxPp6lpk043G650PatE8%3D"}]}'
       Reporting-Endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1707096649&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=3cqO6Z0gZi%2BmQFwOU5050m9UX1odWT31Rj342zOTCyY%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1707170393&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=wvSm8xbc4Ndv3wcEm7C0zviQxPp6lpk043G650PatE8%3D
       Nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       Connection:
@@ -52,9 +52,9 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '9999'
       Date:
-      - Mon, 05 Feb 2024 01:30:49 GMT
+      - Mon, 05 Feb 2024 21:59:53 GMT
       X-Ratelimit-Reset:
-      - '1707096651'
+      - '1707170394'
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -171,17 +171,19 @@ http_interactions:
         URL that specifies the behavior of this scalar.","type":{"kind":"NON_NULL","name":null,"ofType":{"kind":"SCALAR","name":"String","ofType":null}},"defaultValue":null}]}]}}}
 
         '
-  recorded_at: Mon, 05 Feb 2024 01:30:50 GMT
+  recorded_at: Mon, 05 Feb 2024 21:59:53 GMT
 - request:
     method: post
     uri: https://www.dnd5eapi.co/graphql
     body:
       encoding: UTF-8
-      string: '{"query":"query GraphQL__Client__OperationDefinition_75440($index:
-        String) {\n  monster(index: $index) {\n    index\n    name\n    challenge_rating\n    image\n    size\n    type\n    alignment\n    armor_class
-        {\n      value\n    }\n    speed {\n      walk\n      fly\n      swim\n    }\n    hit_points\n    strength\n    dexterity\n    constitution\n    intelligence\n    wisdom\n    charisma\n    languages\n    special_abilities
+      string: '{"query":"query GraphQL__Client__OperationDefinition_75680($index:
+        String) {\n  monster(index: $index) {\n    index\n    name\n    size\n    armor_class
+        {\n      value\n    }\n    speed {\n      walk\n      fly\n      swim\n    }\n    hit_points\n    strength\n    dexterity\n    constitution\n    intelligence\n    wisdom\n    charisma\n    damage_vulnerabilities\n    damage_resistances\n    damage_immunities\n    proficiency_bonus\n    proficiencies
+        {\n      proficiency {\n        name\n      }\n      value\n    }\n    senses
+        {\n      blindsight\n      darkvision\n      passive_perception\n    }\n    special_abilities
         {\n      name\n      desc\n    }\n    actions {\n      name\n      desc\n    }\n    legendary_actions
-        {\n      name\n      desc\n    }\n  }\n}","operationName":"GraphQL__Client__OperationDefinition_75440","variables":{}}'
+        {\n      name\n      desc\n    }\n  }\n}","operationName":"GraphQL__Client__OperationDefinition_75680","variables":{}}'
     headers:
       Content-Type:
       - application/json
@@ -199,9 +201,9 @@ http_interactions:
       Server:
       - Cowboy
       Report-To:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707096650&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=xGKjVy6AxOvXfPW9tHZQ8qx6QG58liCtFkH9%2BC7fjIY%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707170393&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=wvSm8xbc4Ndv3wcEm7C0zviQxPp6lpk043G650PatE8%3D"}]}'
       Reporting-Endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1707096650&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=xGKjVy6AxOvXfPW9tHZQ8qx6QG58liCtFkH9%2BC7fjIY%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1707170393&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=wvSm8xbc4Ndv3wcEm7C0zviQxPp6lpk043G650PatE8%3D
       Nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       Connection:
@@ -215,26 +217,29 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '9999'
       Date:
-      - Mon, 05 Feb 2024 01:30:50 GMT
+      - Mon, 05 Feb 2024 21:59:53 GMT
       X-Ratelimit-Reset:
-      - '1707096651'
+      - '1707170395'
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '2694'
+      - '3225'
       Etag:
-      - W/"a86-VoqbNeNBJfe2FaIoB/4hGvPG2gk"
+      - W/"c99-Qg4OmRiRC1dU3JP77I0zeTL4Zbk"
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"data":{"monster":{"index":"adult-gold-dragon","name":"Adult Gold
-        Dragon","challenge_rating":17,"image":null,"size":"HUGE","type":"DRAGON","alignment":"lawful
-        good","armor_class":[{"value":19}],"speed":{"walk":"40 ft.","fly":"80 ft.","swim":"40
-        ft."},"hit_points":256,"strength":27,"dexterity":14,"constitution":25,"intelligence":16,"wisdom":15,"charisma":24,"languages":"Common,
-        Draconic","special_abilities":[{"name":"Amphibious","desc":"The dragon can
-        breathe air and water."},{"name":"Legendary Resistance","desc":"If the dragon
-        fails a saving throw, it can choose to succeed instead."}],"actions":[{"name":"Multiattack","desc":"The
+        Dragon","size":"HUGE","armor_class":[{"value":19}],"speed":{"walk":"40 ft.","fly":"80
+        ft.","swim":"40 ft."},"hit_points":256,"strength":27,"dexterity":14,"constitution":25,"intelligence":16,"wisdom":15,"charisma":24,"damage_vulnerabilities":[],"damage_resistances":[],"damage_immunities":["fire"],"proficiency_bonus":6,"proficiencies":[{"proficiency":{"name":"Saving
+        Throw: DEX"},"value":8},{"proficiency":{"name":"Saving Throw: CON"},"value":13},{"proficiency":{"name":"Saving
+        Throw: WIS"},"value":8},{"proficiency":{"name":"Saving Throw: CHA"},"value":13},{"proficiency":{"name":"Skill:
+        Insight"},"value":8},{"proficiency":{"name":"Skill: Perception"},"value":14},{"proficiency":{"name":"Skill:
+        Persuasion"},"value":13},{"proficiency":{"name":"Skill: Stealth"},"value":8}],"senses":{"blindsight":"60
+        ft.","darkvision":"120 ft.","passive_perception":24},"special_abilities":[{"name":"Amphibious","desc":"The
+        dragon can breathe air and water."},{"name":"Legendary Resistance","desc":"If
+        the dragon fails a saving throw, it can choose to succeed instead."}],"actions":[{"name":"Multiattack","desc":"The
         dragon can use its Frightful Presence. It then makes three attacks: one with
         its bite and two with its claws."},{"name":"Bite","desc":"Melee Weapon Attack:
         +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage."},{"name":"Claw","desc":"Melee
@@ -263,5 +268,5 @@ http_interactions:
         and be knocked prone. The dragon can then fly up to half its flying speed."}]}}}
 
         '
-  recorded_at: Mon, 05 Feb 2024 01:30:50 GMT
+  recorded_at: Mon, 05 Feb 2024 21:59:54 GMT
 recorded_with: VCR 6.2.0
