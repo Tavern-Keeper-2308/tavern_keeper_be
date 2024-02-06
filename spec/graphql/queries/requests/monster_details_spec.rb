@@ -75,9 +75,7 @@ module Queries
                 name
                 desc
               }
-              conditionImmunities {
-                name
-              }
+              conditionImmunities
             }
           }
         GQL

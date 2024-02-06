@@ -94,6 +94,9 @@ RSpec.describe MonsterFacade, type: :facade do
 
       expect(monster).to respond_to(:legendary_actions)
       expect(monster.legendary_actions).to be_a(Array)
+
+      expect(monster).to respond_to(:condition_immunities)
+      expect(monster.condition_immunities).to be_a(Array)
     end
   end
 end
