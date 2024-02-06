@@ -9,7 +9,7 @@ class DndService
   end
   
   def query_monster_list
-    response = dnd_client.query <<~GRAPHQL
+    dnd_client.query <<~GRAPHQL
       query {
         monsters {
           index
@@ -79,6 +79,6 @@ class DndService
       }
     GRAPHQL
 
-    response = dnd_client.execute(query, index: index)
+    dnd_client.execute(query, index: index)
   end
 end
