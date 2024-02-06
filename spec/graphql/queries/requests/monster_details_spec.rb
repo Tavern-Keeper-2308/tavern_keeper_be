@@ -11,8 +11,8 @@ module Queries
           expect(response).to have_http_status(:ok)
 
           json = JSON.parse(response.body)
-          monster = json['data']['monster'].first
-          
+          monster = json['data']['monster']
+  
           expect(monster['index']).to be_a(String)
           expect(monster['name']).to be_a(String)
           expect(monster['size']).to be_a(String)
