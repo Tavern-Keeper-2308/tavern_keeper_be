@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :encounter do
-    user_name { 'Drizzt' }
+    user_name { "Drizzt" }
     encounter_name { Faker::Books::Lovecraft.fhtagn }
     party_size { rand(1..4) }
     party_level { rand(1..20) }

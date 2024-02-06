@@ -40,7 +40,7 @@ module Types
         argument :userName, String, required: true 
       end
       def encounters(userName:)
-        Encounters.where(user_name: userName)
+        encounters = Encounter.where(user_name: userName)
       end
   end
 end
