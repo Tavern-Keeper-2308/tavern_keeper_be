@@ -12,6 +12,6 @@ class MonsterFacade
     service = DndService.new
     response = service.query_monster_details(index)
     monster_data = response.original_hash['data']['monster']
-    [Monster.new(monster_data)]
+    Monster.new(monster_data)
   end
 end

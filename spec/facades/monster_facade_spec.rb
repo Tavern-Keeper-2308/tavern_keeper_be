@@ -31,7 +31,7 @@ RSpec.describe MonsterFacade, type: :facade do
 
     it '#single_monster_details(index)' do
       facade = MonsterFacade
-      monster = facade.single_monster_details('aboleth').first
+      monster = facade.single_monster_details('aboleth')
 
       expect(monster).to be_a(Monster)
 
