@@ -27,7 +27,7 @@ module Types
         MonsterFacade.monster_list
       end
 
-    field :monster, [Types::MonsterType], null: false,
+    field :monster, Types::MonsterType, null: false,
       description: "Details for one monster" do
         argument :index, String
       end
