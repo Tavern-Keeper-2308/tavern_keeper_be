@@ -34,5 +34,13 @@ module Types
       def monster(index:)
         MonsterFacade.single_monster_details(index)
       end
+
+    field :encounters, [Types::EncounterType], null: false,
+      description: "A complete list of a users encounters" do
+        argument :userId, ID, required: true 
+      end
+      def encounters(userId:)
+        Encounters.where(user_id: userId)
+      end
   end
 end
