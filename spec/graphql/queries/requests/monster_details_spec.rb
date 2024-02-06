@@ -44,11 +44,8 @@ module Queries
             monster(index: $index) {
               index
               name
-              challengeRating
-              image
               size
               type
-              alignment
               armorClass
               speed {
                 walk
@@ -62,7 +59,19 @@ module Queries
               intelligence
               wisdom
               charisma
-              languages
+              damageVulnerabilities
+              damageResistances
+              damageImmunities
+              proficiencyBonus
+              proficiencies {
+                name
+                value
+              }
+              senses {
+                blindsight
+                darkvision
+                passivePerception
+              }
               specialAbilities {
                 name
                 desc
