@@ -18,6 +18,9 @@ module Queries
           expect(encounter['encounterName']).to be_a(String)
           expect(encounter['partySize']).to be_a(Integer)
           expect(encounter['partyLevel']).to be_a(Integer)
+          expect(encounter['summary']).to be_a(String)
+          expect(encounter['description']).to be_a(String)
+          expect(encounter['treasure']).to be_a(String)
           expect(encounter['encounterMonsters']).to be_a(Array)
         end
       end
