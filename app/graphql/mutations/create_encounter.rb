@@ -16,10 +16,12 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
                               party_level: party_level, 
                               summary: summary, 
                               description: description, 
-                              treasure: treasure,
-                              encounter_monsters: encounter_monsters)
+                              treasure: treasure)
 
-    if encounter.save 
+    if encounter.save
+      monsters = encounter_monsters.each do |monster|
+        EncounterMonster.create!(encounter: encounter, monster: monster)
+      end
       { encounter: encounter, errors: [] }
     else
       { encounter: nil, errors: encounter.errors.full_messages }
