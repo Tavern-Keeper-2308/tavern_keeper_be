@@ -16,7 +16,7 @@ module Queries
       end
       def query
         <<~GQL
-          query getEncounters($userId: ID!) {
+          query getEncounters($userName: String!) {
             encounters(userId: $userId) {
               encounterName
               partySize
