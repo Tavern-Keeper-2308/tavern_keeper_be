@@ -24,8 +24,7 @@ class DndService
   end
 
   def query_monster_details(index)
-    variables = { index: index }
-    response = dnd_client.query <<~GRAPHQL
+    query = dnd_client.parse <<~GRAPHQL
       query($index: String) {
         monster(index: $index) {
           index
@@ -79,5 +78,7 @@ class DndService
         }
       }
     GRAPHQL
+
+    response = dnd_client.execute(query, index: index)
   end
 end
