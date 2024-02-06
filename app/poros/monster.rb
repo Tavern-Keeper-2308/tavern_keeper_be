@@ -38,10 +38,10 @@ class Monster
   private
   
   def monster_proficiencies(raw_proficiency_data)
-    if !raw_proficiency_data.nil?
-      raw_proficiency_data.map do |proficiency|
-        { 'value' => proficiency['value'], 'name' => proficiency['proficiency']['name']}
-      end 
-    end
+    return unless raw_proficiency_data.present?
+
+    raw_proficiency_data.map do |proficiency|
+      { 'value' => proficiency['value'], 'name' => proficiency['proficiency']['name']}
+    end 
   end
 end
