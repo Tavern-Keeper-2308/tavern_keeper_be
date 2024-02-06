@@ -9,7 +9,7 @@ class DndService
   end
   
   def query_monster_list
-    response = dnd_client.query <<~GRAPHQL
+    dnd_client.query <<~GRAPHQL
       query {
         monsters {
           index
@@ -24,17 +24,12 @@ class DndService
   end
 
   def query_monster_details(index)
-    variables = { index: index }
-    response = dnd_client.query <<~GRAPHQL
+    query = dnd_client.parse <<~GRAPHQL
       query($index: String) {
         monster(index: $index) {
           index
           name
-          challenge_rating
-          image
           size
-          type
-          alignment
           armor_class {
             value
           }
@@ -50,7 +45,21 @@ class DndService
           intelligence
           wisdom
           charisma
-          languages
+          damage_vulnerabilities
+          damage_resistances
+          damage_immunities
+          proficiency_bonus
+          proficiencies {
+              proficiency {
+                  name
+              }
+              value
+          }
+          senses {
+              blindsight
+              darkvision
+              passive_perception
+          }
           special_abilities {
             name
             desc
@@ -63,8 +72,13 @@ class DndService
             name
             desc
           }
+          condition_immunities {
+            name
+          }
         }
       }
     GRAPHQL
+
+    dnd_client.execute(query, index: index)
   end
 end

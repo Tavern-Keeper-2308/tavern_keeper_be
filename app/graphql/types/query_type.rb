@@ -20,12 +20,19 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+    
+    field :monsters, [Types::MonsterType], null: false,
+      description: "A complete list of Monsters" 
+      def monsters
+        MonsterFacade.monster_list
+      end
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
-    end
+    field :monster, Types::MonsterType, null: false,
+      description: "Details for one monster" do
+        argument :index, String
+      end
+      def monster(index:)
+        MonsterFacade.single_monster_details(index)
+      end
   end
 end
