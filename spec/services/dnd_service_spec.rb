@@ -138,5 +138,14 @@ describe DndService, type: :service do
         expect(immunity).to be_a(String)
       end
     end 
+
+    it '#query_monster_details(index), returns A DIFFERENT MONSTER' do
+      service = DndService.new
+      response = service.query_monster_details('goblin')
+      monster = response.data.monster
+      
+      expect(monster.index).to eq('goblin')
+      expect(monster.name).to eq('Goblin')
+    end
   end
 end
