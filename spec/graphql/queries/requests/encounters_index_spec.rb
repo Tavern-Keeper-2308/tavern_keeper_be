@@ -21,6 +21,10 @@ module Queries
           expect(encounter['description']).to be_a(String)
           expect(encounter['treasure']).to be_a(String)
           expect(encounter['encounterMonsters']).to be_a(Array)
+            encounter['encounterMonsters'].each do |emonster|
+              expect(emonster['monsterName']).to be_a(String)
+              expect(emonster['monsterIndex']).to be_a(String)
+            end
           end
         end
       end
@@ -37,6 +41,7 @@ module Queries
               treasure
               encounterMonsters {
                 monsterName
+                monsterIndex
               }
             }
           }
