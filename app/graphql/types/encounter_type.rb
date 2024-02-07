@@ -9,7 +9,7 @@ module Types
     field :summary, String
     field :description, String
     field :treasure, String
-    field :monsters, [Types::MonsterType]
+    field :monsters, [Types::EncounterMonsterType]
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
   end

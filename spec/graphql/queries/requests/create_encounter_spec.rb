@@ -42,9 +42,7 @@ module Mutations
               summary: "#{summary}",
               description: "#{description}",
               treasure: "#{treasure}",
-              encounterMonsters: [
-                #{encounter_monsters.map { |monster| "{ name: \"#{monster[:name]}\"}" }.join(',')}
-              ]
+              encounterMonsters: #{encounter_monsters}
             ) {
               encounter {
                 encounterName
