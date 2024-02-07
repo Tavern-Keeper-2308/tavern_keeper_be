@@ -12,8 +12,7 @@ module Queries
           json = JSON.parse(response.body)
           data = json['data']['encounters']
           expect(data.count).to eq(6)
-          encounter = data.first
-          
+          data.each do |encounter|
           expect(encounter['userName']).to eq("Drizzt")
           expect(encounter['encounterName']).to be_a(String)
           expect(encounter['partySize']).to be_a(Integer)
@@ -22,6 +21,7 @@ module Queries
           expect(encounter['description']).to be_a(String)
           expect(encounter['treasure']).to be_a(String)
           expect(encounter['encounterMonsters']).to be_a(Array)
+          end
         end
       end
       def query
