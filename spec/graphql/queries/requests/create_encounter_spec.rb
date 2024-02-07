@@ -11,10 +11,7 @@ module Mutations
           summary = 'Pretty spicy'
           description = "You're about to fight 3 beholders, feel free to cry"
           treasure = '50GP, Longbow'
-          encounter_monsters = [
-            { monster_name: 'Beholder' },
-            { monster_name: 'Beholder' }
-          ]
+          encounter_monsters = ['Beholder', 'Beholder']
 
           post '/graphql', params: { query: query(encounter_name, party_size, party_level, summary, description, treasure, encounter_monsters) }
 
