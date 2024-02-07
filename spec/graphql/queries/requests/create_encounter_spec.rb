@@ -5,18 +5,18 @@ module Mutations
     RSpec.describe CreateEncounter, type: :request do
       describe '.resolve' do
         it 'creates an encounter', :vcr do
-          encounter_name = 'Test Encounter'
-          party_size = 'Medium'
-          party_level = '5'
-          summary = 'A brief summary of the encounter'
-          description = 'A detailed description of the encounter'
-          treasure = 'Some valuable treasure'
+          encounter_name = 'Party Wipe'
+          party_size = 4
+          party_level = 3
+          summary = 'Pretty spicy'
+          description = "You're about to fight 3 beholders, feel free to cry"
+          treasure = '50GP, Longbow'
           encounter_monsters = [
-            { name: 'Monster 1' },
-            { name: 'Monster 2' }
+            { monster_name: 'Beholder' },
+            { monster_name: 'Beholder' }
           ]
 
-          post '/graphql', params: { query: query_string(encounter_name, party_size, party_level, summary, description, treasure, encounter_monsters) }
+          post '/graphql', params: { query: query(encounter_name, party_size, party_level, summary, description, treasure, encounter_monsters) }
 
           json_response = JSON.parse(response.body)
           data = json_response['data']['createEncounter']
@@ -35,7 +35,7 @@ module Mutations
         end
       end
 
-      def query_string(encounter_name, party_size, party_level, summary, description, treasure, encounter_monsters)
+      def query(encounter_name, party_size, party_level, summary, description, treasure, encounter_monsters)
         <<~GQL
           mutation {
             createEncounter(
