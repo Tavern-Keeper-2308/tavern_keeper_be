@@ -57,7 +57,9 @@ jobs: # a collection of steps
           name: deploy
           command: '#e.g. ./deploy.sh'
 workflows:
-  build-and-test:
-    filters:
-      branches:
-        only: main
+  build-test-deploy:
+    jobs:
+      - build-and-test:
+        filters:
+          branches:
+            only: main
