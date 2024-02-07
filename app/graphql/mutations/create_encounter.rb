@@ -20,7 +20,7 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
 
     if encounter.save
       monsters = encounter_monsters.each do |monster|
-        EncounterMonster.create!(encounter: encounter, monster: monster)
+        EncounterMonster.create!(encounter: encounter, monster_name: monster)
       end
       { encounter: encounter, errors: [] }
     else
