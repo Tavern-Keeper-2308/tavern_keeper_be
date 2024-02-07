@@ -69,3 +69,4 @@ FactoryBot.create(:encounter_monster, encounter: encounter10, monster_name: "Anc
 FactoryBot.create(:encounter_monster, encounter: encounter10, monster_name: "Ancient Red Dragon", monster_index: "ancient-red-dragon")
 
 
+

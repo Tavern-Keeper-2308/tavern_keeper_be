@@ -28,6 +28,7 @@ module Queries
           end
         end
       end
+      
       def query
         <<~GQL
           query getEncounters($userName: String!) {

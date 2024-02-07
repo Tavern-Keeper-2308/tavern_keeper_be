@@ -3,3 +3,4 @@ class AddColumnToEncounterMonsters < ActiveRecord::Migration[7.1]
     add_column :encounter_monsters, :monster_index, :string
   end
 end
+

@@ -5,3 +5,4 @@ FactoryBot.define do
     monster_index { "goblin" }
   end
 end
+
