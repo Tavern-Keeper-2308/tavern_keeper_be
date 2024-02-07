@@ -11,7 +11,7 @@ module Queries
 
           data.each do |monster|
             expect(monster['index']).to be_a(String)
-            expect(monster['name']).to be_a(String)
+            expect(monster['monsterName']).to be_a(String)
             expect(monster['size']).to be_a(String)
             expect(monster['type']).to be_a(String)
             expect(monster['alignment']).to be_a(String)
@@ -38,7 +38,7 @@ module Queries
           query getMonsters {
             monsters {
               index
-              name
+              monsterName
               size
               type
               alignment

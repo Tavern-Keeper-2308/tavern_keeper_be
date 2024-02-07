@@ -14,7 +14,7 @@ module Queries
           monster = json['data']['monster']
   
           expect(monster['index']).to be_a(String)
-          expect(monster['name']).to be_a(String)
+          expect(monster['monsterName']).to be_a(String)
           expect(monster['size']).to be_a(String)
           # expect(monster['type']).to be_a(String)
           # expect(monster['alignment']).to be_a(String)
@@ -43,7 +43,7 @@ module Queries
           query getMonster($index: String!) {
             monster(index: $index) {
               index
-              name
+              monsterName
               size
               type
               armorClass

@@ -12,8 +12,8 @@ RSpec.describe MonsterFacade, type: :facade do
         expect(monster).to respond_to(:index)
         expect(monster.index).to be_a(String)
 
-        expect(monster).to respond_to(:name)
-        expect(monster.name).to be_a(String)
+        expect(monster).to respond_to(:monster_name)
+        expect(monster.monster_name).to be_a(String)
 
         expect(monster).to respond_to(:challenge_rating)
         expect(monster.challenge_rating).to be_a(String)
@@ -38,8 +38,8 @@ RSpec.describe MonsterFacade, type: :facade do
       expect(monster).to respond_to(:index)
       expect(monster.index).to be_a(String)
 
-      expect(monster).to respond_to(:name)
-      expect(monster.name).to be_a(String)
+      expect(monster).to respond_to(:monster_name)
+      expect(monster.monster_name).to be_a(String)
 
       # expect(monster).to respond_to(:challenge_rating)
       # expect(monster.challenge_rating).to be_a(String)
