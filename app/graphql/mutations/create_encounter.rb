@@ -5,7 +5,7 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
   argument :summary, String, required: false
   argument :description, String, required: false
   argument :treasure, String, required: false
-  argument :encounter_monsters, [Types::EncounterMonsterType], required: true
+  argument :encounter_monsters, [String], required: true
 
   field :encounter, Types::EncounterType, null: false
   field :errors, [String], null: false
@@ -19,8 +19,8 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
                               treasure: treasure)
 
     if encounter.save
-      monsters = encounter_monsters.each do |monster|
-        EncounterMonster.create!(encounter: encounter, monster_name: monster)
+      encounter_monsters.each do |monster_name|
+        EncounterMonster.create!(encounter: encounter, monster_name: monster_name)
       end
       { encounter: encounter, errors: [] }
     else
