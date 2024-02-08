@@ -8,27 +8,6 @@ module Queries
           encounter = FactoryBot.create(:encounter)
           FactoryBot.create_list(:encounter_monster, 3, encounter: encounter)
     
-          query = <<~GRAPHQL
-            query {
-              getEncounter($id: ID!) {
-                encounter(id: $id) {
-                  id
-                  userName
-                  encounterName
-                  partySize
-                  partyLevel
-                  summary
-                  description
-                  treasure
-                  encounterMonsters {
-                    monsterName
-                    monsterIndex
-                  }
-                }
-              }
-            }
-          GRAPHQL
-    
           post '/graphql', params: { query: query, variables: { id: encounter.id } }
     
           json_response = JSON.parse(response.body)
@@ -53,6 +32,29 @@ module Queries
             expect(monster_data['monster_index']).to eq(encounter.encounter_monsters[index].monster_index)
           end
         end
+      end
+
+      def query
+        <<~GQL
+          query {
+            getEncounter($id: ID!) {
+              encounter(id: $id) {
+                id
+                userName
+                encounterName
+                partySize
+                partyLevel
+                summary
+                description
+                treasure
+                encounterMonsters {
+                  monsterName
+                  monsterIndex
+                }
+              }
+            }
+          }
+        GQL
       end
     end
   end
