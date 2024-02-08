@@ -45,7 +45,7 @@ module Types
 
     field :encounter, Types::EncounterType, null: false,
       description: "Details for one encounter" do
-        argument :id, ID, required: true
+        argument :encounterId, ID, required: true
       end
     def encounter(id:)
       Encounter.where(id: id)
