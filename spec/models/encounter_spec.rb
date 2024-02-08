@@ -5,9 +5,8 @@ RSpec.describe Encounter, type: :model do
    it { should validate_presence_of(:party_size)}
    it { should validate_presence_of(:party_level)}
    it { should validate_presence_of(:encounter_name)}
-  #  it { should validate_presence_of(:summary)}
-  #  it { should validate_presence_of(:description)}
-  #  it { should validate_presence_of(:treasure)}
+   it { should validate_presence_of(:user_name)}
+
  end
  describe 'relationships' do
    it { should have_many(:encounter_monsters)}
