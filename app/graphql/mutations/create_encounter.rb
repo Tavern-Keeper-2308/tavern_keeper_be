@@ -1,7 +1,7 @@
 class Mutations::CreateEncounter < Mutations::BaseMutation
   argument :encounter_name, String, required: true
-  argument :party_size, String, required: true
-  argument :party_level, String, required: true
+  argument :party_size, Integer, required: true
+  argument :party_level, Integer, required: true
   argument :summary, String, required: false
   argument :description, String, required: false
   argument :treasure, String, required: false
