@@ -5,24 +5,8 @@ module Mutations
     RSpec.describe CreateEncounter, type: :request do
       describe '.resolve' do
         it 'creates an encounter', :vcr do
-          # encounter_name = "Party Wipe"
-          # party_size = 4
-          # party_level = 3
-          # summary = "Pretty spicy"
-          # description = "You're about to fight 3 beholders, feel free to cry"
-          # treasure = "50GP, Longbow"
-          # encounter_monsters = ["Beholder", "Beholder"]
-
           post '/graphql', params: { query: mutation }
-          # post '/graphql', params: { query: mutation(
-          #                                     encounter_name, 
-          #                                     party_size, party_level, 
-          #                                     summary, description, 
-          #                                     treasure, 
-          #                                     encounter_monsters
-          #                                   )
-          #                           }
-require 'pry'; binding.pry
+
           json_response = JSON.parse(response.body)
           data = json_response['data']['createEncounter']
           errors = data['errors']
@@ -30,45 +14,15 @@ require 'pry'; binding.pry
 
           expect(errors).to be_empty
           expect(encounter).not_to be_nil
-          expect(encounter['encounterName']).to eq(encounter_name)
-          expect(encounter['partySize']).to eq(party_size)
-          expect(encounter['partyLevel']).to eq(party_level)
-          expect(encounter['summary']).to eq(summary)
-          expect(encounter['description']).to eq(description)
-          expect(encounter['treasure']).to eq(treasure)
-          expect(encounter['encounterMonsters']).to eq(encounter_monsters)
+          expect(encounter['encounterName']).to eq('Party Wipe')
+          expect(encounter['partySize']).to eq(4)
+          expect(encounter['partyLevel']).to eq(3)
+          expect(encounter['summary']).to eq('I hope this works')
+          expect(encounter['description']).to eq('Monster party!')
+          expect(encounter['treasure']).to eq('We not deserve anything')
+          expect(encounter['monsters']).to eq([{"monsterName"=>"beholder"}, {"monsterName"=>"goblin"}])
         end
       end
-
-    #   def mutation(encounter_name, party_size, party_level, summary, description, treasure, encounter_monsters)
-    #     <<~GQL
-    #     mutation {
-    #       createEncounter(input: {
-    #         encounterName: "#{encounter_name}",
-    #         partySize: #{party_size},
-    #         partyLevel: #{party_level},
-    #         summary: "#{summary}",
-    #         description: "#{description}",
-    #         treasure: "#{treasure}",
-    #         encounterMonsters: #{encounter_monsters}
-    #       }) {
-    #         encounter {
-    #           id
-    #           encounterName
-    #           partySize
-    #           partyLevel
-    #           summary
-    #           description
-    #           treasure
-    #           monsters {
-    #             monsterName
-    #           }
-    #         }
-    #         errors
-    #       }
-    #     }
-    #   GQL
-    # end
 
       def mutation
         <<~GQL
@@ -78,7 +32,7 @@ require 'pry'; binding.pry
               partySize: 4,
               partyLevel: 3,
               summary: "I hope this works",
-              description: "Why does it have to be a string",
+              description: "Monster party!",
               treasure: "We not deserve anything",
               encounterMonsters: ["beholder", "goblin"]
             }) {
