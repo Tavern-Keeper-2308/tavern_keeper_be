@@ -21,8 +21,9 @@
   <p align="left">
     This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, name, hit points, and armor class attributes. 
     <br />
+    <br />
     This GraphQL API handles the backend functionality including: 
-    <ul>
+    <ul align="left">
       <li><a href="https://www.dnd5eapi.co/docs/#overview--graphql">Consumption of third party D&D 5e GraphQL API</li>
       <li>Query endpoint(s) for display of created encounters as well as monster details</li>
       <li>Mutation endpoint(s) for creation of new encounters</li>
