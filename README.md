@@ -27,7 +27,7 @@
       <li><a href="https://www.dnd5eapi.co/docs/#overview--graphql">Consumption of third party D&D 5e GraphQL API</li>
       <li>Query endpoint(s) for display of created encounters as well as monster details</li>
       <li>Mutation endpoint(s) for creation of new encounters</li>
-      <li>Current deploy url: https://tavern-keeper-be.onrender.com/</li>
+      <li>Current deploy GraphQL API url: https://tavern-keeper-be.onrender.com/</li>
     </ul>
     <br />
     <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be"><strong>Explore Backend docs »</strong></a>
@@ -53,7 +53,7 @@
       - [Testing](#testing)
   3. [Database](#database)
   4. [Endpoints](#endpoints)
-      - [Query User](#query-user)
+      - [Query getMonsters](#query-getmonsters)
       - [Query Encounter](#query-encounter)
       - [Mutation New User](#mutation-new-user)
       - [Mutation New Encounter](#mutation-new-encounter)
@@ -145,6 +145,7 @@ To get a local copy up and running follow these simple example steps.
 
 <!-- ENDPOINTS -->
 ## Endpoints
+Query endpoints are documented showing full scope of available attributes. Query requests can be modified to include only neccesary attribute data to return in a response. 
 
 ### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
 
@@ -175,45 +176,51 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query User](#query-user)
-
+### [Query getMonsters](#query-getmonsters)
+- Gets list of all available monsters, with simple base attributes (Example only shows a few monsters, not full respsonse).
+- This endpoint is utilized by the frontend for encounter creation, displaying all possible monster choices from the D&D 5e compendium.
 **`ENDPOINT BADGE HERE`**
 ##### Example Query
 ```graphql
-query getUser($id: Integer!) {
-    queryUsers (byId: $id) {
-        id
-        username
-        password
-        encounters {
-            encounter_id
-        }
-    }
-}
-```
-##### Example GraphQL Variables
-```graphql
-{
-    "id": 55
+query getMonsters {
+  monsters {
+    monsterIndex
+    monsterName
+    size
+    type
+    alignment
+    challengeRating
+  }
 }
 ```
 ##### Example Response
 ```json
 {
     "data": {
-        "queryUsers": [
+        "monsters": [
             {
-                "'id": 55,
-                "username": "Shrek",
-                "password": "password123",
-                "encounters": [
-                    {
-                        "encounter_id": 3
-                    },
-                    {
-                        "encounter_id": 5
-                    }
-                ]
+                "monsterIndex": "acolyte",
+                "monsterName": "Acolyte",
+                "size": "MEDIUM",
+                "type": "HUMANOID",
+                "alignment": "any alignment",
+                "challengeRating": "0.25"
+            },
+            {
+                "monsterIndex": "aboleth",
+                "monsterName": "Aboleth",
+                "size": "LARGE",
+                "type": "ABERRATION",
+                "alignment": "lawful evil",
+                "challengeRating": "10"
+            },
+            {
+                "monsterIndex": "adult-black-dragon",
+                "monsterName": "Adult Black Dragon",
+                "size": "HUGE",
+                "type": "DRAGON",
+                "alignment": "chaotic evil",
+                "challengeRating": "14"
             }
         ]
     }
