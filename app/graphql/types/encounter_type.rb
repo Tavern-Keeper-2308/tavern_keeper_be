@@ -11,7 +11,6 @@ module Types
     field :description, String
     field :treasure, String
     field :encounter_monsters, [Types::EncounterMonsterType], null: false
-    field :monsters, [Types::EncounterMonsterType]
 
     def monsters
       object.encounter_monsters
