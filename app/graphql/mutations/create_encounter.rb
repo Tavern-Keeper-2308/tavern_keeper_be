@@ -16,7 +16,8 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
                               party_level: input[:partyLevel], 
                               summary: input[:summary], 
                               description: input[:description], 
-                              treasure: input[:treasure])
+                              treasure: input[:treasure],
+                              user_name: "Shrek")
 
     if encounter.save
       encounter_monsters = input[:encounterMonsters]
