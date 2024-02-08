@@ -45,10 +45,10 @@ module Types
 
     field :encounter, Types::EncounterType, null: false,
       description: "Details for one encounter" do
-        argument :encounterId, ID, required: true
+        argument :id, ID, required: true
       end
     def encounter(id:)
-      Encounter.where(id: id)
+      Encounter.find_by(id: id)
     end
   end
 end
