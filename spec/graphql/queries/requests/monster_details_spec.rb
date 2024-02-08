@@ -13,8 +13,8 @@ module Queries
           json = JSON.parse(response.body)
           monster = json['data']['monster']
   
-          expect(monster['index']).to be_a(String)
-          expect(monster['name']).to be_a(String)
+          expect(monster['monsterIndex']).to be_a(String)
+          expect(monster['monsterName']).to be_a(String)
           expect(monster['size']).to be_a(String)
           # expect(monster['type']).to be_a(String)
           # expect(monster['alignment']).to be_a(String)
@@ -42,8 +42,8 @@ module Queries
         <<~GQL
           query getMonster($index: String!) {
             monster(index: $index) {
-              index
-              name
+              monsterIndex
+              monsterName
               size
               type
               armorClass

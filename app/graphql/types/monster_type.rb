@@ -1,7 +1,7 @@
 module Types
   class MonsterType < Types::BaseObject
-    field :index, String
-    field :name, String
+    field :monster_index, String
+    field :monster_name, String
     field :challenge_rating, String
     field :image, String
     field :size, String

@@ -1,13 +1,13 @@
 class Monster
-  attr_reader :index, :name, :challenge_rating, :image, :size, :type, :alignment,
+  attr_reader :monster_index, :monster_name, :challenge_rating, :image, :size, :type, :alignment,
               :armor_class, :speed, :hit_points, :strength, :dexterity, :constitution,
               :intelligence, :wisdom, :charisma, :languages, :special_abilities,
               :actions, :legendary_actions, :proficiencies, :senses, :damage_immunities,
               :damage_resistances, :damage_vulnerabilities, :condition_immunities, :proficiency_bonus
 
   def initialize(monster_data)
-    @index = monster_data['index']
-    @name = monster_data['name']
+    @monster_index = monster_data['index']
+    @monster_name = monster_data['name']
     @challenge_rating = monster_data['challenge_rating'].to_s
     @image = monster_data['image']
     @size = monster_data['size']
