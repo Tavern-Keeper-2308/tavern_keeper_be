@@ -19,12 +19,19 @@
 <h3 align="center">Tavern Keeper</h3>
 
   <p align="center">
-    INSERT-DETAILS-HERE
+    This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, type, alignment, and challenge rating attributes. 
+    <br />
+    This GraphQL API handles the backend functionality including: 
+    <ul>
+      <li><a href="https://www.dnd5eapi.co/docs/#overview--graphql">Consumption of third party D&D 5e GraphQL API</li>
+      <li>Query endpoint(s) for display of created encounters as well as monster details</li>
+      <li>Mutation endpoint(s) for creation of new encounters</li>
+    </ul>
     <br />
     <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be">View Demo</a>
+    <a href="https://github.com/Tavern-Keeper-2308/tavern-keeper-fe">Link to Frontend Repository</a>
     ·
     <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be/issues">Report Bug</a>
     ·
