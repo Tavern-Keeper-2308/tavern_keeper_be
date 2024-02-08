@@ -57,7 +57,7 @@ jobs: # a collection of steps
         - checkout
         - run:
             name: Deploy app to Render
-            command: curl -X GET "https://api.render.com/deploy"
+            command: curl -X GET "https://api.render.com/deploy/srv-cn23i2ocmk4c73ddk82g?key=Z5JpAzARVJg"
 workflows:
   build-test-deploy:
     jobs:
