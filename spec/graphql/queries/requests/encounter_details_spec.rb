@@ -10,8 +10,8 @@ module Queries
     
           query = <<~GRAPHQL
             query {
-              getEncounter($encounterId: ID!) {
-                encounter(encounterId: $encounterId) {
+              getEncounter($id: ID!) {
+                encounter(id: $id) {
                   id
                   userName
                   encounterName
@@ -29,7 +29,7 @@ module Queries
             }
           GRAPHQL
     
-          post '/graphql', params: { query: query, variables: { encounterId: encounter.id } }
+          post '/graphql', params: { query: query, variables: { id: encounter.id } }
     
           json_response = JSON.parse(response.body)
 
