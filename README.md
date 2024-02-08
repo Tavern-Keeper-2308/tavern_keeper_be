@@ -146,8 +146,16 @@ To get a local copy up and running follow these simple example steps.
 <!-- ENDPOINTS -->
 ## Endpoints
 1. Query endpoints are documented showing full scope of available attributes.
-2. Query request can be modified to include only desired attribute data in the response.
-3. Query request attributes can be ordered  to have control over the order of attributes in the response.
+2. Attributes should all be written in queries and mutations using `camelCase`
+3. Some attributes are nested under another, using curly brackets `{}`
+  ```graphql
+  attribute {
+    nestedAttribute
+    anotherNestedAttribute
+  }
+  ```
+4. Query and Mutation request can be modified to include only desired attribute data in the response.
+5. Query and Mutation request attributes can be ordered designate the order of attributes in the response.
 
 
 ### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
