@@ -10,7 +10,7 @@ module Queries
           data = json['data']['monsters']
 
           data.each do |monster|
-            expect(monster['index']).to be_a(String)
+            expect(monster['monsterIndex']).to be_a(String)
             expect(monster['monsterName']).to be_a(String)
             expect(monster['size']).to be_a(String)
             expect(monster['type']).to be_a(String)
@@ -37,7 +37,7 @@ module Queries
         <<~GQL
           query getMonsters {
             monsters {
-              index
+              monsterIndex
               monsterName
               size
               type

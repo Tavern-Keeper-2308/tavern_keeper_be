@@ -36,6 +36,7 @@ module Mutations
               description: "Monster party!",
               treasure: "We not deserve anything",
               encounterMonsters: ["beholder", "goblin"]
+              userName: "Shrek"
             }) {
             encounter {
               id
