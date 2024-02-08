@@ -19,7 +19,7 @@
 <h3 align="center">Tavern Keeper</h3>
 
   <p align="center">
-    This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, type, alignment, and challenge rating attributes. 
+    This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, name, hit poiunts, and armor class attributes. 
     <br />
     This GraphQL API handles the backend functionality including: 
     <ul>
