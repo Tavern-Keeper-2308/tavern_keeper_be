@@ -244,8 +244,9 @@ INSERT-JSON-RESPONSE-HERE
 
 
 ### [Query getMonster](#query-getmonster)
-- Gets list of all monster details for a single monster by index
-- This endpoint is utilized by the frontend for encounter creation, displaying all possible monster choices from the D&D 5e compendium.
+- Gets list of all monster details for a single monster by index.
+- Requires a variable, `index`. 
+- This endpoint is utilized by the frontend for encounter details page, for monster details dropdowns.
 
 ##### GraphQL Query
 ```graphql
