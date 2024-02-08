@@ -40,7 +40,15 @@ module Types
         argument :userName, String, required: true 
       end
       def encounters(userName:)
-        encounters = Encounter.where(user_name: userName)
+        Encounter.where(user_name: userName)
       end
+
+    field :encounter, Types::EncounterType, null: false,
+      description: "Details for one encounter" do
+        argument :id, ID, required: true
+      end
+    def encounter(id:)
+      Encounter.where(id: id)
+    end
   end
 end
