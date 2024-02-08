@@ -3,12 +3,14 @@
 module Types
   class EncounterType < Types::BaseObject
     field :id, ID, null: false
+    field :user_name, String, null: false
     field :encounter_name, String
     field :party_size, Integer
     field :party_level, Integer
     field :summary, String
     field :description, String
     field :treasure, String
+    field :encounter_monsters, [Types::EncounterMonsterType], null: false
     field :monsters, [Types::EncounterMonsterType]
 
     def monsters

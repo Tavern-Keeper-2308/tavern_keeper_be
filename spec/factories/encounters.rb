@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :encounter do
+    user_name { "Drizzt" }
     encounter_name { Faker::Books::Lovecraft.fhtagn }
-    party_size { (1..4).to_a.sample }
-    party_level { (1..20).to_a.sample }
-    summary { Faker::Books::Lovecraft.paragraph }
-    description { Faker::Fantasy::Tolkien.poem }
+    party_size { rand(1..4) }
+    party_level { rand(1..20) }
+    summary { Faker::Fantasy::Tolkien.poem }
+    description { Faker::Books::Lovecraft.paragraph }
     treasure { Faker::Games::ElderScrolls.jewelry }
   end
 end
