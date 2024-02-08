@@ -27,6 +27,7 @@
       <li><a href="https://www.dnd5eapi.co/docs/#overview--graphql">Consumption of third party D&D 5e GraphQL API</li>
       <li>Query endpoint(s) for display of created encounters as well as monster details</li>
       <li>Mutation endpoint(s) for creation of new encounters</li>
+      <li>Current deploy url: https://tavern-keeper-be.onrender.com/</li>
     </ul>
     <br />
     <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be"><strong>Explore Backend docs »</strong></a>
@@ -118,10 +119,17 @@ To get a local copy up and running follow these simple example steps.
    ```sh
     bundle
    ```
-5. Rake
+3. Rake
    ```sh
     rails db:{drop,create,migrate,seed}
    ```
+4. To run on local server, [http://localhost:5000/](http://localhost:5000/)
+   ```sh
+    rails s
+   ```
+5. Live deploy via desired method
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
