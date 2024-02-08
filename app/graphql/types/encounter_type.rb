@@ -11,6 +11,11 @@ module Types
     field :description, String
     field :treasure, String
     field :encounter_monsters, [Types::EncounterMonsterType], null: false
+
+    def monsters
+      object.encounter_monsters
+    end
+    
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
   end
