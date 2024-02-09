@@ -55,8 +55,8 @@
   4. [Endpoints](#endpoints)
       - [Query getMonsters](#query-getmonsters)
       - [Query getMonster](#query-getmonster)
-      - [Query getEncounters](#query-getmonsters)
-      - [Query getEncounter](#query-getmonster)
+      - [Query getEncounters](#query-getencounters)
+      - [Query getEncounter](#query-getencounter)
       - [Mutation New User](#mutation-new-user)
       - [Mutation New Encounter](#mutation-new-encounter)
   5. [Roadmap](#roadmap)
@@ -161,13 +161,15 @@ To get a local copy up and running follow these simple example steps.
 
 
 ### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
+- INSERT DETAILS HERE
+- Requires variable(s), `WHAT` - `DATATYPE` type.
+- This endpoint is utilized by the frontend...
 
-**`ENDPOINT BADGE HERE`**
 ##### GraphQL Query/Mutation (MAKE SURE TO DELETE ONE THAT IT NOT IS)
 ```graphql
 INSERT-QUERY-HERE
 ```
-##### GraphQL Variables
+##### GraphQL Variable(s)
 ```graphql
 INSERT-QUERY-HERE
 ```
@@ -175,6 +177,9 @@ INSERT-QUERY-HERE
 ```json
 INSERT-JSON-RESPONSE-HERE
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### Error Handling
 ##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
 ##### GraphQL Query
@@ -257,8 +262,8 @@ INSERT-JSON-RESPONSE-HERE
 
 
 ### [Query getMonster](#query-getmonster)
-- Gets list of all monster details for a single monster by index.
-- Requires a variable, `index`. 
+- Gets list of all monster details for a single monster by `index`.
+- Requires variable(s), `index` - `String` type.
 - This endpoint is utilized by the frontend for encounter details page, for monster details dropdowns.
 
 ##### GraphQL Query
@@ -311,7 +316,7 @@ query getMonster($index: String!) {
     }
 }
 ```
-##### GraphQL Variables
+##### GraphQL Variable(s)
 ```graphql
 {
     "index": "aboleth"
@@ -437,125 +442,104 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Mutation New User](#mutation-new-user)
-**`ENDPOINT BADGE HERE`**
-##### GraphQL Mutation
+### [Query getEncounters](#query-getencounters)
+- Gets list of all encounters for a single user, by `userName`.
+- Requires variable(s), `userName` -  `String` type.
+- This endpoint is used by frontend to create an index page displaying all encounters created by a single user.
+
+##### GraphQL Query
 ```graphql
-mutation {
-    createUser(input: {
-        username: "Shrek",
-        password: "password123"
-    }) {
-        user {
-            id
-            username
+query getEncounters($userName: String!) {
+    encounters(userName: $userName) {
+        id
+        userName
+        encounterName
+        partySize
+        partyLevel
+        summary
+        description
+        treasure
+        encounterMonsters {
+            monsterName
         }
-        errors
     }
+}
+```
+##### GraphQL Variable(s)
+```graphql
+{
+    "userName": "demo-many-encounters"
 }
 ```
 ##### Response
 ```json
 {
     "data": {
-        "createUser": {
-            "user": {
-                "id": "55",
-                "username": "Shrek"
+        "encounters": [
+            {
+                "id": "2",
+                "userName": "demo-many-encounters",
+                "encounterName": "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn",
+                "partySize": 1,
+                "partyLevel": 3,
+                "summary": "Ere iron was found or tree was hewn",
+                "description": "Gambrel fungus antiquarian gibbous gibbering unnamable. Furtive blasphemous cyclopean comprehension manuscript non-euclidean tentacles decadent. Antediluvian shunned mortal. Squamous non-euclidean cyclopean eldritch tenebrous gibbering charnel. Cyclopean stench furtive gibbering.",
+                "treasure": "Amulet of Kynareth",
+                "encounterMonsters": [
+                    {
+                        "monsterName": "Giant Shark"
+                    },
+                    {
+                        "monsterName": "Aboleth"
+                    },
+                    {
+                        "monsterName": "Aboleth"
+                    }
+                ]
             },
-            "errors": []
-        }
+            {
+                "id": "3",
+                "userName": "demo-many-encounters",
+                "encounterName": "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn",
+                "partySize": 1,
+                "partyLevel": 13,
+                "summary": "Under the mountain dark and tall",
+                "description": "Mortal madness furtive gibbering stygian. Mortal singular amorphous stygian stench antiquarian. Non-euclidean furtive decadent accursed comprehension cyclopean foetid fungus. Madness spectral stench charnel indescribable comprehension unutterable.",
+                "treasure": "Gold and Ruby Circlet",
+                "encounterMonsters": [
+                    {
+                        "monsterName": "Goblin"
+                    },
+                    {
+                        "monsterName": "Goblin"
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "userName": "demo-many-encounters",
+                "encounterName": "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn",
+                "partySize": 3,
+                "partyLevel": 9,
+                "summary": "The Fall of Gil-galad",
+                "description": "Antiquarian stygian lurk charnel unnamable furtive. Non-euclidean blasphemous unmentionable dank stygian immemorial. Effulgence gibbous foetid antediluvian ululate non-euclidean gibbering squamous. Antediluvian daemoniac dank.",
+                "treasure": "Nightweaver's Band",
+                "encounterMonsters": [
+                    {
+                        "monsterName": "Aboleth"
+                    },
+                    {
+                        "monsterName": "Aboleth"
+                    }
+                ]
+            }
+        ]
     }
 }
-```
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Mutation
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-### [Mutation New Encounter](#mutation-new-encounter)
-**`ENDPOINT BADGE HERE`**
-##### GraphQL Mutation
-```graphql
-mutation {
-    createEncounter(input: {
-        copper: 1,
-        silver: 1,
-        gold: 1,
-        platinum: 1,
-        electrum: 1,
-        encounter_loots: [
-            {
-                item_name: "Longbow"
-            },
-            {
-                item_name: "Greataxe"
-            }
-        ],
-        encounter_monsters: [
-            {
-                monster_name: "Beholder"
-            }
-        ]
-    }) {
-        encounter {
-            id
-            copper
-            silver
-            gold
-            platinum
-            electrum
-            encounter_loots {
-                item_name
-            }
-            encounter_monsters {
-                monster_name
-            }
-        }
-        errors
-    }
-}
-```
-##### Response
-```json
-{
-    "data": {
-        "createEncounter": {
-            "encounter": {
-                "id": 55,
-                "copper": "1",
-                "silver": "1",
-                "gold": "1",
-                "platinum": "1",
-                "electrum": "1",
-                "encounter_loots": [
-                    {
-                        "item_name": "Longbow"
-                    },
-                    {
-                        "item_name": "Greataxe"
-                    }
-                ],
-                "encounter_monsters": [
-                    {
-                        "monster_name": "Beholder"
-                    }
-                ]
-            },
-            "errors": []
-        }
-    }
-}
-```
 #### Error Handling
 ##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
 ##### GraphQL Query
@@ -568,6 +552,7 @@ INSERT-JSON-RESPONSE-HERE
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
