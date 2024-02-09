@@ -21,9 +21,10 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
                               user_name: input[:user_name])
 
     if encounter.save
-      encounter_monsters = input[:encounterMonsters]
-      encounter_monsters.each do |monster_name|
-        EncounterMonster.create!(encounter_id: encounter.id, monster_name: monster_name)
+      input[:encounterMonsters].each do |monster_index|
+        EncounterMonster.create!(encounter_id: encounter.id,
+                                monster_name: monster_index.capitalize,
+                                monster_index: monster_index)
       end
       { encounter: encounter, errors: [] }
     else
