@@ -7,7 +7,7 @@ module Types
     field :size, String
     field :type, String
     field :alignment, String
-    field :armor_class, String
+    field :armor_class, Integer
     field :speed, Types::SpeedType
     field :hit_points, Int
     field :strength, Int
