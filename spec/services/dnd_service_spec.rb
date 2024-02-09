@@ -24,6 +24,9 @@ describe DndService, type: :service do
         expect(monster.size).to be_a(String)
         expect(monster.type).to be_a(String)
         expect(monster.alignment).to be_a(String)
+        expect(monster.hit_points).to be_a(Integer)
+        expect(monster.armor_class).to be_a(Array)
+        expect(monster.armor_class.first.value).to be_a(Integer)
       end
     end
 
