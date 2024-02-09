@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3000"
+    origins "*"
 
     resource "/graphql",
       headers: :any,
@@ -15,12 +15,12 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       expose: ['Access-Control-Allow-Origin']
   end
 
-  allow do
-    origins 'https://tavern-keeper-fe.vercel.app'
+  # allow do
+  #   origins 'https://tavern-keeper-fe.vercel.app'
 
-    resource "/graphql",
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head],
-      expose: ['Access-Control-Allow-Origin']
-  end
+  #   resource "/graphql",
+  #     headers: :any,
+  #     methods: [:get, :post, :put, :patch, :delete, :options, :head],
+  #     expose: ['Access-Control-Allow-Origin']
+  # end
 end
