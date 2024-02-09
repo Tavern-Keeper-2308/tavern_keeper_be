@@ -157,6 +157,7 @@ To get a local copy up and running follow these simple example steps.
   ```
 4. Query and Mutation requests can be modified to include only desired attribute data in the response.
 5. Query and Mutation request attributes can be ordered designate the order of attributes in the response.
+6. Variables for mutations can be input in any order.
 
 
 ### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
@@ -631,6 +632,104 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
+- Creates a new encounter based on input variables, `userName`, `encounterName`, `partySize`, `partyLevel`, `summary`, `description`, `treasure`, and `encounterIndexes` (this is an array of monster index strings).
+- Requires variable(s), `userName` - `String` type, `encounterName` - `String` type, `partySize` - `Integer` type, `partyLevel` - `Integer` type, `summary` - `String` type, `description` - `String` type, `treasure` - `String` type, `encounterIndexes` - [`String`] type.
+- This endpoint is utilized by the frontend to create a new encounter from user input on encounter builder page.
+
+##### GraphQL Mutation
+```graphql
+mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterIndexes: [String!]!) {
+    createEncounter(input: {
+        userName: $userName,
+        encounterName: $encounterName,
+        partySize: $partySize,
+        partyLevel: $partyLevel,
+        summary: $summary,
+        description: $description,
+        treasure: $treasure,
+        encounterIndexes: $encounterIndexes
+    }) {
+        encounter {
+            userName
+            id
+            encounterName
+            partySize
+            partyLevel
+            summary
+            description
+            treasure
+            encounterMonsters {
+                monsterIndex
+                monsterName
+            }
+        }
+        errors
+    }
+}
+```
+##### GraphQL Variable(s)
+```graphql
+{
+  "userName": "WhatIsDnD",
+  "encounterName": "Party Wipe",
+  "partySize": 4,
+  "partyLevel": 3,
+  "summary": "I hope this works",
+  "description": "Why does it have to be a string",
+  "treasure": "We not deserve anything",
+  "encounterIndexes": ["beholder", "goblin", "adult-black-dragon"]
+}
+```
+##### Response
+```json
+{
+    "data": {
+        "createEncounter": {
+            "encounter": {
+                "userName": "WhatIsDnD",
+                "id": "15",
+                "encounterName": "Party Wipe",
+                "partySize": 4,
+                "partyLevel": 3,
+                "summary": "I hope this works",
+                "description": "Why does it have to be a string",
+                "treasure": "We not deserve anything",
+                "encounterMonsters": [
+                    {
+                        "monsterIndex": "beholder",
+                        "monsterName": "Beholder"
+                    },
+                    {
+                        "monsterIndex": "goblin",
+                        "monsterName": "Goblin"
+                    },
+                    {
+                        "monsterIndex": "adult-black-dragon",
+                        "monsterName": "Adult Black Dragon"
+                    }
+                ]
+            },
+            "errors": []
+        }
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### Error Handling
+##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
+##### GraphQL Query
+```graphql
+INSERT-QUERY-HERE
+```
+##### Response
+```json
+INSERT-JSON-RESPONSE-HERE
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ROADMAP -->
