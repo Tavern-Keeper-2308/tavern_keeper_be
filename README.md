@@ -53,11 +53,11 @@
       - [Testing](#testing)
   3. [Database](#database)
   4. [Endpoints](#endpoints)
-      - [Query getMonsters](#query-getmonsters)
-      - [Query getMonster](#query-getmonster)
-      - [Query getEncounters](#query-getencounters)
-      - [Query getEncounter](#query-getencounter)
-      - [Mutation createEncounter](#mutation-createencounter)
+      - [Query: getMonsters](#query-getmonsters)
+      - [Query: getMonster](#query-getmonster)
+      - [Query: getEncounters](#query-getencounters)
+      - [Query: getEncounter](#query-getencounter)
+      - [Mutation: createEncounter](#mutation-createencounter)
   5. [Roadmap](#roadmap)
   6. [Contributors](#contributors)
 
@@ -194,7 +194,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query getMonsters](#query-getmonsters)
+### [Query: getMonsters](#query-getmonsters)
 - Gets list of all available monsters, with simple base attributes (Example only shows a few monsters, not full respsonse).
 - This endpoint is utilized by the frontend for encounter creation, displaying all possible monster choices from the D&D 5e compendium.
 
@@ -261,7 +261,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query getMonster](#query-getmonster)
+### [Query: getMonster](#query-getmonster)
 - Gets list of all monster details for a single monster by `index`.
 - Requires variable(s), `index` - `String` type.
 - This endpoint is utilized by the frontend for encounter details page, for monster details dropdowns.
@@ -442,7 +442,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query getEncounters](#query-getencounters)
+### [Query: getEncounters](#query-getencounters)
 - Gets list of all encounters for a single user, by `userName`.
 - Requires variable(s), `userName` -  `String` type.
 - This endpoint is used by frontend to create an index page displaying all encounters created by a single user.
@@ -554,7 +554,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [Query getEncounter](#query-getencounter)
+### [Query: getEncounter](#query-getencounter)
 - Gets details for a single encounter, by encounter `id`
 - Requires variable(s), `id` - `Integer` type.
 - This endpoint is utilized by the frontend for create a display page for a single encounter.
@@ -632,7 +632,7 @@ INSERT-JSON-RESPONSE-HERE
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
+### [Mutation: createEncounter](#mutation-createencounter)
 - Creates a new encounter based on input variables, `userName`, `encounterName`, `partySize`, `partyLevel`, `summary`, `description`, `treasure`, and `encounterIndexes` (this is an array of monster index strings).
 - Requires variable(s), `userName` - `String` type, `encounterName` - `String` type, `partySize` - `Integer` type, `partyLevel` - `Integer` type, `summary` - `String` type, `description` - `String` type, `treasure` - `String` type, `encounterIndexes` - [`String`] type.
 - This endpoint is utilized by the frontend to create a new encounter from user input on encounter builder page.
