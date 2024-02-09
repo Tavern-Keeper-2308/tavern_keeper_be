@@ -81,9 +81,11 @@
 
 ### Gems
 
-#### Deployment
+#### Production
 * [![faraday][gem-faraday]][gem-faraday-url]
 * [![jsonapi-serializer][gem-jsonapi-serializer]][gem-jsonapi-serializer-url]
+* [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
+* [![faker][gem-faker]][gem-faker-url]
 
 #### Testing
 * [![debug][gem-debug]][gem-debug-url]
@@ -206,6 +208,8 @@ query getMonsters {
     monsterIndex
     monsterName
     size
+    hitPoints
+    armorClass
     type
     alignment
     challengeRating
@@ -221,6 +225,8 @@ query getMonsters {
                 "monsterIndex": "acolyte",
                 "monsterName": "Acolyte",
                 "size": "MEDIUM",
+                "hitPoints": 9,
+                "armorClass": 10,
                 "type": "HUMANOID",
                 "alignment": "any alignment",
                 "challengeRating": "0.25"
@@ -229,6 +235,8 @@ query getMonsters {
                 "monsterIndex": "aboleth",
                 "monsterName": "Aboleth",
                 "size": "LARGE",
+                "hitPoints": 135,
+                "armorClass": 17,
                 "type": "ABERRATION",
                 "alignment": "lawful evil",
                 "challengeRating": "10"
@@ -237,6 +245,8 @@ query getMonsters {
                 "monsterIndex": "adult-black-dragon",
                 "monsterName": "Adult Black Dragon",
                 "size": "HUGE",
+                "hitPoints": 195,
+                "armorClass": 19,
                 "type": "DRAGON",
                 "alignment": "chaotic evil",
                 "challengeRating": "14"
