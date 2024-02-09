@@ -331,7 +331,7 @@ query getMonster($index: String!) {
             "monsterName": "Aboleth",
             "size": "LARGE",
             "type": null,
-            "armorClass": "17",
+            "armorClass": 17,
             "speed": {
                 "walk": "10 ft.",
                 "fly": null,
@@ -639,7 +639,7 @@ INSERT-JSON-RESPONSE-HERE
 
 ##### GraphQL Mutation
 ```graphql
-mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterIndexes: [String!]!) {
+mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!) {
     createEncounter(input: {
         userName: $userName,
         encounterName: $encounterName,
@@ -648,7 +648,7 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
         summary: $summary,
         description: $description,
         treasure: $treasure,
-        encounterIndexes: $encounterIndexes
+        encounterMonsterIndexes: $encounterMonsterIndexes
     }) {
         encounter {
             userName
@@ -666,19 +666,19 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
         }
         errors
     }
-}
+}    
 ```
 ##### GraphQL Variable(s)
 ```graphql
 {
-  "userName": "WhatIsDnD",
+  "userName": "WhoAmI",
   "encounterName": "Party Wipe",
   "partySize": 4,
   "partyLevel": 3,
   "summary": "I hope this works",
   "description": "Why does it have to be a string",
   "treasure": "We not deserve anything",
-  "encounterIndexes": ["beholder", "goblin", "adult-black-dragon"]
+  "encounterMonsterIndexes": ["beholder", "goblin","goblin", "adult-black-dragon"]
 }
 ```
 ##### Response
@@ -687,8 +687,8 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
     "data": {
         "createEncounter": {
             "encounter": {
-                "userName": "WhatIsDnD",
-                "id": "15",
+                "userName": "WhoAmI",
+                "id": "13",
                 "encounterName": "Party Wipe",
                 "partySize": 4,
                 "partyLevel": 3,
@@ -699,6 +699,10 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
                     {
                         "monsterIndex": "beholder",
                         "monsterName": "Beholder"
+                    },
+                    {
+                        "monsterIndex": "goblin",
+                        "monsterName": "Goblin"
                     },
                     {
                         "monsterIndex": "goblin",
