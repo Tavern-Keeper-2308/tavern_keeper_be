@@ -23,6 +23,20 @@ module Mutations
           expect(encounter['encounterMonsters']).to eq([{"monsterName"=>"beholder"}, {"monsterName"=>"goblin"}])
           expect(encounter['userName']).to eq('Shrek')
         end
+
+        context 'when encounter creation fails' do
+          it 'returns errors' do
+            post '/graphql', params: { query: bad_mutation }
+      
+            json_response = JSON.parse(response.body)
+            data = json_response['data']['createEncounter']
+            errors = data['errors']
+            encounter = data['encounter']
+      
+            expect(errors).not_to be_empty
+            expect(encounter).to be_nil
+          end
+        end
       end
 
       def mutation
@@ -57,6 +71,37 @@ module Mutations
         GQL
       end
 
+      def bad_mutation
+        <<~GQL
+          mutation {
+            createEncounter(input: {
+              encounterName: "Party Wipe",
+              partySize: 4,
+              partyLevel: 3,
+              summary: "I hope this works",
+              description: "Monster party!",
+              treasure: "We not deserve anything",
+              encounterMonsters: ["beholder", "goblin"]
+              userName: 
+            }) {
+            encounter {
+              id
+              encounterName
+              partySize
+              partyLevel
+              summary
+              description
+              treasure
+              encounterMonsters {
+                monsterName
+              }
+              userName
+            }
+            errors
+          }
+        }
+        GQL
+      end
     end
   end
 end
