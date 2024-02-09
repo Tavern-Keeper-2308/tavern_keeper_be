@@ -13,7 +13,7 @@ class Monster
     @size = monster_data['size']
     @type = monster_data['type']
     @alignment = monster_data['alignment']
-    @armor_class = monster_data['armor_class']&.first&.fetch('value', nil).to_s
+    @armor_class = monster_data['armor_class']&.first&.fetch('value', nil)
     @speed = monster_data['speed']
     @hit_points = monster_data['hit_points']
     @strength = monster_data['strength']

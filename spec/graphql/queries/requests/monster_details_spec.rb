@@ -20,7 +20,7 @@ module Queries
           # expect(monster['alignment']).to be_a(String)
           # expect(monster['challengeRating']).to be_a(String)
           expect(monster['image']).to be_nil
-          expect(monster['armorClass']).to be_a(String)
+          expect(monster['armorClass']).to be_a(Integer)
           expect(monster['speed']).to be_a(Hash)
           expect(monster['hitPoints']).to be_a(Integer)
           expect(monster['strength']).to be_a(Integer)
