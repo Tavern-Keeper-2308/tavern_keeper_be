@@ -57,8 +57,7 @@
       - [Query getMonster](#query-getmonster)
       - [Query getEncounters](#query-getencounters)
       - [Query getEncounter](#query-getencounter)
-      - [Mutation New User](#mutation-new-user)
-      - [Mutation New Encounter](#mutation-new-encounter)
+      - [Mutation createEncounter](#mutation-createencounter)
   5. [Roadmap](#roadmap)
   6. [Contributors](#contributors)
 
@@ -148,15 +147,15 @@ To get a local copy up and running follow these simple example steps.
 <!-- ENDPOINTS -->
 ## Endpoints
 1. Query endpoints are documented showing full scope of available attributes.
-2. Attributes should all be written in queries and mutations using `camelCase`
-3. Some attributes are nested under another, using curly brackets `{}`
+2. Attributes should all be written in queries and mutations using `camelCase`.
+3. Some attributes are nested under another, using curly brackets `{}`.
   ```graphql
   attribute {
     nestedAttribute
     anotherNestedAttribute
   }
   ```
-4. Query and Mutation request can be modified to include only desired attribute data in the response.
+4. Query and Mutation requests can be modified to include only desired attribute data in the response.
 5. Query and Mutation request attributes can be ordered designate the order of attributes in the response.
 
 
