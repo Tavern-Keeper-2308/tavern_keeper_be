@@ -42,7 +42,7 @@ module Mutations
               summary: "I hope this works",
               description: "Monster party!",
               treasure: "We not deserve anything",
-              encounterMonsters: ["beholder", "goblin"]
+              encounterMonsterIndexes: ["beholder", "goblin"]
               userName: "Shrek"
             }) {
             encounter {
