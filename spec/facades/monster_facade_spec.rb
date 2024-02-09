@@ -54,7 +54,7 @@ RSpec.describe MonsterFacade, type: :facade do
       # expect(monster.alignment).to be_a(String)
       
       expect(monster).to respond_to(:armor_class)
-      expect(monster.armor_class).to be_a(String)
+      expect(monster.armor_class).to be_a(Integer)
 
       expect(monster).to respond_to(:speed)
       expect(monster.speed).to be_a(Hash)

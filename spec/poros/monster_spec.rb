@@ -11,7 +11,7 @@ RSpec.describe Monster do
       "armor_class" => [
         {
           "type" => "natural",
-          "value" => '17'
+          "value" => 17
         }
       ],
       "hit_points" => 135,
@@ -153,7 +153,7 @@ RSpec.describe Monster do
     expect(@monster.size).to eq('Large')
     expect(@monster.type).to eq('aberration')
     expect(@monster.alignment).to eq('lawful evil')
-    expect(@monster.armor_class).to eq("17")
+    expect(@monster.armor_class).to eq(17)
     expect(@monster.speed).to eq(
       { 
         'walk' => '10 ft.', 
