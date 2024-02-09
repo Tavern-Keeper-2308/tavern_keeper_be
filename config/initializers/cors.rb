@@ -16,7 +16,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins 'https://tavern-keeper-fe.vercel.app/'
+    origins 'https://tavern-keeper-fe.vercel.app'
 
     resource "/graphql",
       headers: :any,
