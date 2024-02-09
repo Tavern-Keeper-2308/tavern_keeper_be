@@ -5,7 +5,7 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
   argument :summary, String, required: false
   argument :description, String, required: false
   argument :treasure, String, required: false
-  argument :encounterMonsters, [String], required: true
+  argument :encounterMonsterIndexes, [String], required: true
   argument :user_name, String, required: true
 
   field :encounter, Types::EncounterType, null: false
@@ -23,7 +23,7 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
     if encounter.save
       input[:encounterMonsters].each do |monster_index|
         EncounterMonster.create!(encounter_id: encounter.id,
-                                monster_name: monster_index.capitalize,
+                                monster_name: monster_index..gsub('-', ' ').titleize,
                                 monster_index: monster_index)
       end
       { encounter: encounter, errors: [] }
