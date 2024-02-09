@@ -21,13 +21,13 @@ module Mutations
           expect(encounter['description']).to eq('Monster party!')
           expect(encounter['treasure']).to eq('We not deserve anything')
           expect(encounter['encounterMonsters']).to eq([{
-                                                          "monsterName": "Beholder", 
-                                                          "monsterIndex": "beholder"
+                                                          "monsterName"=>"Beholder", 
+                                                          "monsterIndex"=>"beholder"
                                                         }, 
                                                         {
-                                                          "monsterName": "Goblin", 
-                                                          "monsterIndex": "goblin"
-                                                          }])
+                                                          "monsterName"=>"Goblin", 
+                                                          "monsterIndex"=>"goblin"
+                                                        }])
           expect(encounter['userName']).to eq('Shrek')
         end
       end
@@ -48,7 +48,6 @@ module Mutations
             encounter {
               id
               encounterName
-              encounterIndex
               partySize
               partyLevel
               summary
