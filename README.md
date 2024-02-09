@@ -55,6 +55,8 @@
   4. [Endpoints](#endpoints)
       - [Query getMonsters](#query-getmonsters)
       - [Query getMonster](#query-getmonster)
+      - [Query getEncounters](#query-getmonsters)
+      - [Query getEncounter](#query-getmonster)
       - [Mutation New User](#mutation-new-user)
       - [Mutation New Encounter](#mutation-new-encounter)
   5. [Roadmap](#roadmap)
@@ -237,6 +239,9 @@ query getMonsters {
     }
 }
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### Error Handling
 ##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
 ##### GraphQL Query
@@ -416,6 +421,8 @@ query getMonster($index: String!) {
     }
 }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 #### Error Handling
 ##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
 ##### GraphQL Query
