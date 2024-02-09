@@ -263,7 +263,8 @@ INSERT-JSON-RESPONSE-HERE
 
 ### [Query: getMonster](#query-getmonster)
 - Gets list of all monster details for a single monster by `index`.
-- Requires variable(s), `index` - `String` type.
+- Requires variable(s):
+  `index` - `String` type.
 - This endpoint is utilized by the frontend for encounter details page, for monster details dropdowns.
 
 ##### GraphQL Query
@@ -444,7 +445,8 @@ INSERT-JSON-RESPONSE-HERE
 
 ### [Query: getEncounters](#query-getencounters)
 - Gets list of all encounters for a single user, by `userName`.
-- Requires variable(s), `userName` -  `String` type.
+- Requires variable(s):
+  `userName` -  `String` type
 - This endpoint is used by frontend to create an index page displaying all encounters created by a single user.
 
 ##### GraphQL Query
@@ -556,7 +558,8 @@ INSERT-JSON-RESPONSE-HERE
 
 ### [Query: getEncounter](#query-getencounter)
 - Gets details for a single encounter, by encounter `id`
-- Requires variable(s), `id` - `Integer` type.
+- Requires variable(s):
+  `id` - `Integer` type
 - This endpoint is utilized by the frontend for create a display page for a single encounter.
 
 ##### GraphQL Query
@@ -633,8 +636,16 @@ INSERT-JSON-RESPONSE-HERE
 
 
 ### [Mutation: createEncounter](#mutation-createencounter)
-- Creates a new encounter based on input variables, `userName`, `encounterName`, `partySize`, `partyLevel`, `summary`, `description`, `treasure`, and `encounterIndexes` (this is an array of monster index strings).
-- Requires variable(s), `userName` - `String` type, `encounterName` - `String` type, `partySize` - `Integer` type, `partyLevel` - `Integer` type, `summary` - `String` type, `description` - `String` type, `treasure` - `String` type, `encounterIndexes` - [`String`] type.
+- Creates a new encounter based on input variables, `userName`, `encounterName`, `partySize`, `partyLevel`, `summary`, `description`, `treasure`, and `encounterMonsterIndexes` (this is an array of monster index strings).
+- Requires variable(s):
+  `userName` - `String` type, 
+  `encounterName` - `String` type
+  `partySize` - `Integer` type
+  `partyLevel` - `Integer` type
+  `summary` - `String` type
+  `description` - `String` type
+  `treasure` - `String` type
+  `encounterMonsterIndexes` - [`String`] type
 - This endpoint is utilized by the frontend to create a new encounter from user input on encounter builder page.
 
 ##### GraphQL Mutation
