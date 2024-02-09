@@ -500,7 +500,7 @@ query getEncounters($userName: String!) {
             {
                 "id": "3",
                 "userName": "demo-many-encounters",
-                "encounterName": "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn",
+                "encounterName": "Rawr R'lyeh wgah'nagl Ph'n ui mglw'nafh gl fhtagn",
                 "partySize": 1,
                 "partyLevel": 13,
                 "summary": "Under the mountain dark and tall",
@@ -518,7 +518,7 @@ query getEncounters($userName: String!) {
             {
                 "id": "4",
                 "userName": "demo-many-encounters",
-                "encounterName": "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn",
+                "encounterName": "Tnafh Dargrlw'l fhtagne R'Ph'nglui mg",
                 "partySize": 3,
                 "partyLevel": 9,
                 "summary": "The Fall of Gil-galad",
@@ -534,6 +534,84 @@ query getEncounters($userName: String!) {
                 ]
             }
         ]
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### Error Handling
+##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
+##### GraphQL Query
+```graphql
+INSERT-QUERY-HERE
+```
+##### Response
+```json
+INSERT-JSON-RESPONSE-HERE
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### [Query getEncounter](#query-getencounter)
+- Gets details for a single encounter, by encounter `id`
+- Requires variable(s), `id` - `Integer` type.
+- This endpoint is utilized by the frontend for create a display page for a single encounter.
+
+##### GraphQL Query
+```graphql
+query getEncounter($id: ID!) {
+    encounter(id: $id) {
+        id
+        userName
+        encounterName
+        partySize
+        partyLevel
+        summary
+        description
+        treasure
+        encounterMonsters {
+            monsterName
+            monsterIndex
+        }
+    }
+}
+```
+##### GraphQL Variable(s)
+```graphql
+{
+    "id": 2
+}
+```
+##### Response
+```json
+{
+    "data": {
+        "encounter": {
+            "id": "2",
+            "userName": "demo-many-encounters",
+            "encounterName": "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn",
+            "partySize": 1,
+            "partyLevel": 3,
+            "summary": "Ere iron was found or tree was hewn",
+            "description": "Gambrel fungus antiquarian gibbous gibbering unnamable. Furtive blasphemous cyclopean comprehension manuscript non-euclidean tentacles decadent. Antediluvian shunned mortal. Squamous non-euclidean cyclopean eldritch tenebrous gibbering charnel. Cyclopean stench furtive gibbering.",
+            "treasure": "Amulet of Kynareth",
+            "encounterMonsters": [
+                {
+                    "monsterName": "Giant Shark",
+                    "monsterIndex": "giant-shark"
+                },
+                {
+                    "monsterName": "Aboleth",
+                    "monsterIndex": "aboleth"
+                },
+                {
+                    "monsterName": "Aboleth",
+                    "monsterIndex": "aboleth"
+                }
+            ]
+        }
     }
 }
 ```
