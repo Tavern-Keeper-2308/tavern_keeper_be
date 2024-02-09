@@ -9,6 +9,11 @@
 #   end
 
 # users
+EncounterMonster.joins(:encounter).where(encounters: { user_name: "demo-one-encounter" }).destroy_all
+Encounter.where(user_name: "demo-one-encounter").destroy_all
+EncounterMonster.joins(:encounter).where(encounters: { user_name: "demo-many-encounter" }).destroy_all
+Encounter.where(user_name: "demo-many-encounter").destroy_all
+
 demo_no_encounters = { user_name: "demo-no-encounters"}
 
 demo_one_encounter = { user_name: "demo-one-encounter"}
