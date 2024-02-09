@@ -18,6 +18,10 @@ class DndService
           size
           type
           alignment
+          hit_points
+          armor_class {
+            value
+          }
         }
       }
     GRAPHQL
