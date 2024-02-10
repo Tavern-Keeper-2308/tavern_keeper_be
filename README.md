@@ -27,7 +27,7 @@
       <li><a href="https://www.dnd5eapi.co/docs/#overview--graphql">Consumption of third party D&D 5e GraphQL API</li>
       <li>Query endpoint(s) for display of created encounters as well as monster details</li>
       <li>Mutation endpoint(s) for creation of new encounters</li>
-      <li>Current deploy GraphQL API url: https://tavern-keeper-be.onrender.com/</li>
+      <li>Current deploy GraphQL API endpoint: `https://tavern-keeper-be.onrender.com/graphql`</li>
     </ul>
     <br />
     <a href="https://github.com/Tavern-Keeper-2308/tavern_keeper_be"><strong>Explore Backend docs »</strong></a>
@@ -66,38 +66,38 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="images/landing.png" alt="landing" width="400" height="200">
-
 [![Tavern Keeper](https://img.shields.io/badge/Tavern_Keeper-Visit_Website-purple?style=for-the-badge)](INSERT-DEPLOY-LINK)
 
 ### Built With
 * [![Ruby on Rails][Rails-shield]][Rails-url]
 * [![GraphQL][GraphQL-shield]][GraphQL-url]
 * [![PostgreSQL][PostgreSQL-shield]][PostgreSQL-url]
-* [![HTML][HTML-shield]][HTML-url]
-* [![JavaScript][JavaScript-shield]][JavaScript-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Gems
 
 #### Production
-* [![faraday][gem-faraday]][gem-faraday-url]
-* [![jsonapi-serializer][gem-jsonapi-serializer]][gem-jsonapi-serializer-url]
+
+* [![graphql][gem-graphql]][gem-graphql-url]
+* [![graphlient][gem-graphlient]][gem-graphlient-url]
+* [![rack-cors][gem-rackcors]][gem-rackcors-url]
 * [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
 * [![faker][gem-faker]][gem-faker-url]
 
+#### Development
+* [![graphiqlrails][gem-graphiqlrails]][gem-graphiqlrails-url]
+
 #### Testing
-* [![debug][gem-debug]][gem-debug-url]
 * [![rspec-rails][gem-rspec-rails]][gem-rspec-rails-url]
 * [![simplecov][gem-simplecov]][gem-simplecov-url]
 * [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
 * [![faker][gem-faker]][gem-faker-url]
-* [![pry][gem-pry]][gem-pry-url]
 * [![shoulda-matchers][gem-shoulda-matchers]][gem-shoulda-matchers-url]
-* [![capybara][gem-capybara]][gem-capybara-url]
 * [![webmock][gem-webmock]][gem-webmock-url]
 * [![vcr][gem-vcr]][gem-vcr-url]
+* [![pry][gem-pry]][gem-pry-url]
+* [![debug][gem-debug]][gem-debug-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,18 +183,7 @@ INSERT-JSON-RESPONSE-HERE
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Query
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### [Query: getMonsters](#query-getmonsters)
@@ -258,18 +247,7 @@ query getMonsters {
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Query
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### [Query: getMonster](#query-getmonster)
@@ -440,18 +418,7 @@ query getMonster($index: String!) {
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Query
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### [Query: getEncounters](#query-getencounters)
@@ -553,18 +520,7 @@ query getEncounters($userName: String!) {
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Query
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### [Query: getEncounter](#query-getencounter)
@@ -632,18 +588,7 @@ query getEncounter($id: ID!) {
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Query
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### [Mutation: createEncounter](#mutation-createencounter)
@@ -744,19 +689,6 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Error Handling
-##### `INSERT-ERROR-CODE-HERE` INSERT-ERROR-EXPLAINATION-HERE
-##### GraphQL Query
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -764,8 +696,13 @@ INSERT-JSON-RESPONSE-HERE
 - [ ] Database Schema
 - [ ] Set Up Mock Server on Postman (browser version)
     - [ ] JSON Contracts
-- [ ] Endpoint Task
-    - [ ] Sub-Tasks
+- [ ] Configure gems and GraphQL for creating an API
+- [ ] CircleCI and Render CI/CD
+- [ ] Set up consumption architecture using Service/Facade/Poro design pattern
+- [ ] Query: `getMonsters`, gets list of monsters with attributes used for filter and create page
+    - [ ] Set up `MonsterType` class under `Types` module
+    - [ ] Set up `:monster` field in `QueryType` class
+    - [ ] Testing - TDD and Postman
 
 
 
@@ -774,18 +711,16 @@ See the [open issues](https://github.com/Tavern-Keeper-2308/tavern_keeper_be/iss
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- CONTACT -->
 ## Contact
 
-Organization: Tavern Keeper - INSERT-ORG-EMGAIL-HERE
+Organization: Tavern Keeper
 
 Organization Link: [https://github.com/Tavern-Keeper-2308](https://github.com/Tavern-Keeper-2308)
 
 Project Link: [https://github.com/Tavern-Keeper-2308/tavern_keeper_be](https://github.com/Tavern-Keeper-2308/tavern_keeper_be)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ## Contributors
@@ -894,6 +829,18 @@ Arden Ranta
 
 [gem-vcr]: https://img.shields.io/badge/vcr-6.2.0-orange?style=flat-square
 [gem-vcr-url]: https://github.com/vcr/vcr
+
+[gem-rackcors]: https://img.shields.io/badge/rack--cors-2.0.1-9b59b6?style=flat-square&label=rack-cors
+[gem-rackcors-url]: https://github.com/cyu/rack-cors
+
+[gem-graphql]: https://img.shields.io/badge/graphql-2.2.8-E10098?style=flat-square
+[gem-graphql-url]: https://graphql-ruby.org/getting_started.html
+
+[gem-graphlient]: https://img.shields.io/badge/graphlient-0.8.0-6495ED?style=flat-square
+[gem-graphlient-url]: https://github.com/ashkan18/graphlient
+
+[gem-graphiqlrails]: https://img.shields.io/badge/graphiql--rails-1.9.0-00CED1?style=flat-square
+[gem-graphiqlrails-url]: https://github.com/rmosolgo/graphiql-rails
 
 
 <!-- CONTRIBUTOR SHIELDS AND URLS -->
