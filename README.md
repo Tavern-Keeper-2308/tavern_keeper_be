@@ -91,10 +91,7 @@
 * [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
 * [![faker][gem-faker]][gem-faker-url]
 
-#### Development
-* [![graphiqlrails][gem-graphiqlrails]][gem-graphiqlrails-url]
-
-#### Testing
+#### Testing and Development
 * [![rspec-rails][gem-rspec-rails]][gem-rspec-rails-url]
 * [![simplecov][gem-simplecov]][gem-simplecov-url]
 * [![factory_bot_rails][gem-factory_bot_rails]][gem-factory_bot_rails-url]
@@ -809,7 +806,7 @@ Arden Ranta
 [gem-factory_bot_rails]: https://img.shields.io/badge/factory_bot_rails-6.4.0-success?style=flat-square
 [gem-factory_bot_rails-url]: https://github.com/thoughtbot/factory_bot_rails
 
-[gem-faker]: https://img.shields.io/badge/faker-3.2.2-red?style=flat-square
+[gem-faker]: https://img.shields.io/badge/faker-3.2.2-00CED1?style=flat-square
 [gem-faker-url]: https://github.com/faker-ruby/faker
 
 [gem-pry]: https://img.shields.io/badge/pry-0.14.2-yellow?style=flat-square
@@ -844,9 +841,6 @@ Arden Ranta
 
 [gem-graphlient]: https://img.shields.io/badge/graphlient-0.8.0-6495ED?style=flat-square
 [gem-graphlient-url]: https://github.com/ashkan18/graphlient
-
-[gem-graphiqlrails]: https://img.shields.io/badge/graphiql--rails-1.9.0-00CED1?style=flat-square
-[gem-graphiqlrails-url]: https://github.com/rmosolgo/graphiql-rails
 
 
 <!-- CONTRIBUTOR SHIELDS AND URLS -->
