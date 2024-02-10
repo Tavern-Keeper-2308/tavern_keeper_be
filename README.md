@@ -69,9 +69,15 @@
 [![Tavern Keeper](https://img.shields.io/badge/Tavern_Keeper-Visit_Website-purple?style=for-the-badge)](INSERT-DEPLOY-LINK)
 
 ### Built With
+#### Build
 * [![Ruby on Rails][Rails-shield]][Rails-url]
 * [![GraphQL][GraphQL-shield]][GraphQL-url]
 * [![PostgreSQL][PostgreSQL-shield]][PostgreSQL-url]
+
+#### Additional Tools and Deployment
+* [![Postman][Postman-shield]][Postman-url]
+* [![CircleCI][CircleCI-shield]][CircleCI-url]
+* [![Render][Render-shield]][Render-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,7 +116,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Database 
 
-<img src="images/schema.png"  width="300" height="800">
+<img src="images/schema.png">
 
 ### Installation
 
@@ -693,7 +699,7 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
         - [X] Add arguments required for encounter creation (encounterMonsterIndexes is an array of index strings)
         - [X] Add fields for return in response upon creation, `:encounter` and `:errors`
         - [X] Error handling logic
-    - [X] REFACTOR IDEA: Set up a Type for input, `EncounterInputType`, that can be used fo intake input as a single object variable for further mutations
+    - [ ] REFACTOR IDEA: Set up a Type for input, `EncounterInputType`, that can be used fo intake input as a single object variable for further mutations
 
 
 
@@ -780,6 +786,15 @@ Arden Ranta
 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+
+[Postman-shield]: https://img.shields.io/badge/Postman-orange?style=for-the-badge&logo=Postman&logoColor=white
+[Postman-url]: https://www.postman.com/
+
+[CircleCI-shield]: https://img.shields.io/badge/CircleCI-2E8B57?style=for-the-badge&logo=CircleCI&logoColor=white
+[CircleCI-url]: https://circleci.com/developer
+
+[Render-shield]: https://img.shields.io/badge/Render-6A0DAD?style=for-the-badge&logo=Render&logoColor=white
+[Render-url]: https://render.com/
 
 <!-- GEM SHIELDS -->
 [gem-debug]: https://img.shields.io/badge/debug-1.9.1-brightgreen?style=flat-square
