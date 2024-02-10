@@ -69,7 +69,7 @@
 [![Tavern Keeper](https://img.shields.io/badge/Tavern_Keeper-Visit_Website-purple?style=for-the-badge)](INSERT-DEPLOY-LINK)
 
 ### Built With
-#### Build
+#### Development
 * [![Ruby on Rails][Rails-shield]][Rails-url]
 * [![GraphQL][GraphQL-shield]][GraphQL-url]
 * [![PostgreSQL][PostgreSQL-shield]][PostgreSQL-url]
