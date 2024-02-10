@@ -582,6 +582,8 @@ query getEncounter($id: ID!) {
   `treasure` - `String` type</br>
   `encounterMonsterIndexes` - [`String`] type</br>
 - This endpoint is utilized by the frontend to create a new encounter from user input on encounter builder page.
+- Response include `encounter` and `errors`, `errors` is an array and will be empty upon a successful mutation request and encounter creation.
+- If there are errors, only `errors` is returned in the response with `message` detailing the issue and `location` with where the error ocurred, and `extensions` containing details of the error.
 
 ##### GraphQL Mutation
 ```graphql
@@ -667,6 +669,79 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### Error Handling
+##### GraphQL Mutation
+```graphql
+mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!) {
+    createEncounter(input: {
+        userName: $userName,
+        encounterName: $encounterName,
+        partySize: $partySize,
+        partyLevel: $partyLevel,
+        summary: $summary,
+        description: $description,
+        treasure: $treasure,
+        encounterMonsterIndexes: $encounterMonsterIndexes
+    }) {
+        encounter {
+            userName
+            id
+            encounterName
+            partySize
+            partyLevel
+            summary
+            description
+            treasure
+            encounterMonsters {
+                monsterIndex
+                monsterName
+            }
+        }
+        errors
+    }
+}    
+```
+##### GraphQL Variable(s)
+```graphql
+{
+  "encounterName": "Party Wipe",
+  "partySize": 4,
+  "partyLevel": 3,
+  "summary": "I hope this works",
+  "description": "Why does it have to be a string",
+  "treasure": "We not deserve anything",
+  "encounterMonsterIndexes": ["beholder", "goblin","goblin", "adult-black-dragon"]
+}
+```
+##### Response
+```json
+{
+    "errors": [
+        {
+            "message": "Variable $userName of type String! was provided invalid value",
+            "locations": [
+                {
+                    "line": 1,
+                    "column": 26
+                }
+            ],
+            "extensions": {
+                "value": null,
+                "problems": [
+                    {
+                        "path": [],
+                        "explanation": "Expected value to not be null"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- ROADMAP -->
