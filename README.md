@@ -313,9 +313,9 @@ query getMonster($index: String!) {
             "intelligence": 18,
             "wisdom": 15,
             "charisma": 18,
-            "damageVulnerabilities": "[]",
-            "damageResistances": "[]",
-            "damageImmunities": "[]",
+            "damageVulnerabilities": [],
+            "damageResistances": [],
+            "damageImmunities": [],
             "conditionImmunities": [],
             "proficiencyBonus": 4,
             "proficiencies": [
