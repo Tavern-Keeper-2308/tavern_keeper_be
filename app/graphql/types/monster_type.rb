@@ -16,14 +16,14 @@ module Types
     field :intelligence, Int
     field :wisdom, Int
     field :charisma, Int
-    field :languages, String
+    field :languages, [String]
     field :special_abilities, [Types::SpecialAbilityType]
     field :actions, [Types::ActionType]
     field :legendary_actions, [Types::LegendaryActionType]
     field :proficiencies, [Types::ProficiencyType]
-    field :damage_vulnerabilities, String
-    field :damage_resistances, String
-    field :damage_immunities, String
+    field :damage_vulnerabilities, [String]
+    field :damage_resistances, [String]
+    field :damage_immunities, [String]
     field :senses, Types::SenseType
     field :proficiency_bonus, Int
     field :condition_immunities, [String]

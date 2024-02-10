@@ -12,7 +12,7 @@ module Queries
 
           json = JSON.parse(response.body)
           monster = json['data']['monster']
-  
+
           expect(monster['monsterIndex']).to be_a(String)
           expect(monster['monsterName']).to be_a(String)
           expect(monster['size']).to be_a(String)
