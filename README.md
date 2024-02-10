@@ -693,16 +693,31 @@ mutation CreateEncounter($userName: String!, $encounterName: String!, $partySize
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Database Schema
-- [ ] Set Up Mock Server on Postman (browser version)
-    - [ ] JSON Contracts
-- [ ] Configure gems and GraphQL for creating an API
-- [ ] CircleCI and Render CI/CD
-- [ ] Set up consumption architecture using Service/Facade/Poro design pattern
-- [ ] Query: `getMonsters`, gets list of monsters with attributes used for filter and create page
-    - [ ] Set up `MonsterType` class under `Types` module
-    - [ ] Set up `:monster` field in `QueryType` class
-    - [ ] Testing - TDD and Postman
+- [X] Database Schema
+- [X] Set Up Mock Server on Postman (browser version)
+    - [X] JSON Contracts
+- [X] Configure gems and GraphQL for creating an API
+- [X] CircleCI and Render CI/CD
+- [X] Set up consumption architecture using Service/Facade/Poro design pattern
+- [X] Query: `getMonsters`, gets list of all monsters with some attributes used for filter and create page
+    - [X] Set up `MonsterType` class under `Types` module
+    - [X] Set up `field` for `:monster` in `QueryType` class and create `monsters` method using `MonsterFacade`
+- [X] Query: `getMonster`, gets a single monsters with full attributes, by index
+    - [X] Add additional fields to `MonsterType` class under `Types` module
+    - [X] Set up `field` for `:monsters` with required `argument` in `QueryType` class and create `monster(index:)` method using `MonsterFacade`
+- [X] Query: `getEncounters`, gets list of encounters with attributes, by userName
+    - [X] Set up `EncounterType` class under `Types` module
+    - [X] Set up `EncounterMonsterType` class under `Types` module
+    - [X] Set up `field` for `:encounters` in `QueryType` class and create `encounters(userName:)` method using ActiveRecord query
+- [X] Query: `getEncounter`, gets a single encounter by id
+    - [X] Set up `field` for `:encounter` with required `argument` in `QueryType` class and create `encounter(id:)` method using ActiveRecord query
+- [X] Mutation: `createEncounter`, creates new encounter and saves to database using input variables
+    - [X] Add `field` for `:create_encounter` to `MutationType` class in `Types` module
+    - [X] Set up `CreateEncounter` class for mutation, under `app/graphql/mutations`
+        - [X] Add arguments required for encounter creation (encounterMonsterIndexes is an array of index strings)
+        - [X] Add fields for return in response upon creation, `:encounter` and `:errors`
+        - [X] Error handling logic
+    - [X] REFACTOR IDEA: Set up a Type for input, `EncounterInputType`, that can be used fo intake input as a single object variable for further mutations
 
 
 
