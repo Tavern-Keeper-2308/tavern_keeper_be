@@ -162,30 +162,6 @@ To get a local copy up and running follow these simple example steps.
 6. Variables for mutations can be input in any order.
 
 
-### [INSERT-ENDPOINT-NAME-HERE](#INSERT-ENDPOINT-TAG_HERE)
-- INSERT DETAILS HERE
-- Requires variable(s):</br>
-  `WHAT` - `DATATYPE` type</br>
-- This endpoint is utilized by the frontend...
-
-##### GraphQL Query/Mutation (MAKE SURE TO DELETE ONE THAT IT NOT IS)
-```graphql
-INSERT-QUERY-HERE
-```
-##### GraphQL Variable(s)
-```graphql
-INSERT-QUERY-HERE
-```
-##### Response
-```json
-INSERT-JSON-RESPONSE-HERE
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
 ### [Query: getMonsters](#query-getmonsters)
 - Gets list of all available monsters, with simple base attributes (Example only shows a few monsters, not full respsonse).
 - This endpoint is utilized by the frontend for encounter creation, displaying all possible monster choices from the D&D 5e compendium.
