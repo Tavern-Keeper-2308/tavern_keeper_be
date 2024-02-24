@@ -3,7 +3,7 @@
 module Types
   class EncounterType < Types::BaseObject
     field :id, ID, null: false
-    field :user_id, String, null: false
+    field :user_id, Integer, null: false
     field :encounter_name, String
     field :party_size, Integer
     field :party_level, Integer

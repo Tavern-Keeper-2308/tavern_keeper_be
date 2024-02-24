@@ -17,7 +17,7 @@ module Queries
           encounter_data = json_response['data']['encounter']
 
           expect(encounter_data['id']).to eq(encounter.id.to_s)
-          expect(encounter_data['userName']).to eq(encounter.user_name)
+          expect(encounter_data['userId']).to eq(encounter.user_id)
           expect(encounter_data['encounterName']).to eq(encounter.encounter_name)
           expect(encounter_data['partySize']).to eq(encounter.party_size)
           expect(encounter_data['partyLevel']).to eq(encounter.party_level)
@@ -39,7 +39,7 @@ module Queries
           query getEncounter($id: ID!) {
             encounter(id: $id) {
               id
-              userName
+              userId
               encounterName
               partySize
               partyLevel

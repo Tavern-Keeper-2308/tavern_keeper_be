@@ -7,20 +7,22 @@ module Queries
         before(:each) do
           @list = create_list(:encounter_monster, 6)
         end
+        
         it 'returns all encounters associated with a given User ID' do
-          post '/graphql', params: { query: query, variables: { 'userName': "Drizzt" }}
+          post '/graphql', params: { query: query, variables: { 'userId': 1 }}
+          require 'pry'; binding.pry
           json = JSON.parse(response.body)
           data = json['data']['encounters']
           expect(data.count).to eq(6)
           data.each do |encounter|
-          expect(encounter['userName']).to eq("Drizzt")
-          expect(encounter['encounterName']).to be_a(String)
-          expect(encounter['partySize']).to be_a(Integer)
-          expect(encounter['partyLevel']).to be_a(Integer)
-          expect(encounter['summary']).to be_a(String)
-          expect(encounter['description']).to be_a(String)
-          expect(encounter['treasure']).to be_a(String)
-          expect(encounter['encounterMonsters']).to be_a(Array)
+            expect(encounter['userId']).to eq(1)
+            expect(encounter['encounterName']).to be_a(String)
+            expect(encounter['partySize']).to be_a(Integer)
+            expect(encounter['partyLevel']).to be_a(Integer)
+            expect(encounter['summary']).to be_a(String)
+            expect(encounter['description']).to be_a(String)
+            expect(encounter['treasure']).to be_a(String)
+            expect(encounter['encounterMonsters']).to be_a(Array)
             encounter['encounterMonsters'].each do |emonster|
               expect(emonster['monsterName']).to be_a(String)
               expect(emonster['monsterIndex']).to be_a(String)
@@ -31,9 +33,9 @@ module Queries
       
       def query
         <<~GQL
-          query getEncounters($userName: String!) {
-            encounters(userName: $userName) {
-              userName
+          query getEncounters($userId: Int!) {
+            encounters(userId: $userId) {
+              userId
               encounterName
               partySize
               partyLevel

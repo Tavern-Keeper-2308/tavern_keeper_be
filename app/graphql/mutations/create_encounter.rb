@@ -6,7 +6,7 @@ class Mutations::CreateEncounter < Mutations::BaseMutation
   argument :description, String, required: false
   argument :treasure, String, required: false
   argument :encounterMonsterIndexes, [String], required: true
-  argument :user_id, String, required: true
+  argument :user_id, Integer, required: true
 
   field :encounter, Types::EncounterType, null: false
   field :errors, [String], null: false

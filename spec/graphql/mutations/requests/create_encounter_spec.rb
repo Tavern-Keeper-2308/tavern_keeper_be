@@ -28,7 +28,7 @@ module Mutations
                                                           "monsterName"=>"Goblin", 
                                                           "monsterIndex"=>"goblin"
                                                         }])
-          expect(encounter['userName']).to eq('Shrek')
+          expect(encounter['userId']).to eq(1)
         end
       end
 
@@ -43,7 +43,7 @@ module Mutations
               description: "Monster party!",
               treasure: "We not deserve anything",
               encounterMonsterIndexes: ["beholder", "goblin"]
-              userName: "Shrek"
+              userId: 1
             }) {
             encounter {
               id
@@ -57,7 +57,7 @@ module Mutations
                 monsterName
                 monsterIndex
               }
-              userName
+              userId
             }
             errors
           }
