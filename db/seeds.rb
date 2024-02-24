@@ -9,16 +9,16 @@
 #   end
 
 # users
-EncounterMonster.joins(:encounter).where(encounters: { user_name: "demo-one-encounter" }).destroy_all
-Encounter.where(user_name: "demo-one-encounter").destroy_all
-EncounterMonster.joins(:encounter).where(encounters: { user_name: "demo-many-encounter" }).destroy_all
-Encounter.where(user_name: "demo-many-encounter").destroy_all
+EncounterMonster.joins(:encounter).where(encounters: { user_id: 2 }).destroy_all
+Encounter.where(user_id: 2).destroy_all
+EncounterMonster.joins(:encounter).where(encounters: { user_id: 3 }).destroy_all
+Encounter.where(user_id: 3).destroy_all
 
-demo_no_encounters = { user_name: "demo-no-encounters"}
+demo_no_encounters = { user_id: 1}
 
-demo_one_encounter = { user_name: "demo-one-encounter"}
+demo_one_encounter = { user_id: 2}
 
-demo_many_encounters = { user_name: "demo-many-encounters"}
+demo_many_encounters = { user_id: 3}
 
 # encounter for user demo_one_encounter
 encounter = FactoryBot.create(:encounter, demo_one_encounter)

@@ -37,10 +37,10 @@ module Types
 
     field :encounters, [Types::EncounterType], null: false,
       description: "A complete list of a users encounters" do
-        argument :userName, String, required: true 
+        argument :userId, Integer, required: true 
       end
-      def encounters(userName:)
-        Encounter.where(user_name: userName)
+      def encounters(userId:)
+        Encounter.where(user_id: userId)
       end
 
     field :encounter, Types::EncounterType, null: false,
