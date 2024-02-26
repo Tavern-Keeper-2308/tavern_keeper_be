@@ -9,10 +9,10 @@ module Queries
         end
         
         it 'returns all encounters associated with a given User ID' do
-          post '/graphql', params: { query: query, variables: { 'userId': 1 }}
-          require 'pry'; binding.pry
+          post '/graphql', params: { query: query, variables: { 'userId': '1' }}
           json = JSON.parse(response.body)
           data = json['data']['encounters']
+          require 'pry'; binding.pry
           expect(data.count).to eq(6)
           data.each do |encounter|
             expect(encounter['userId']).to eq(1)
@@ -33,7 +33,7 @@ module Queries
       
       def query
         <<~GQL
-          query getEncounters($userId: Int!) {
+          query getEncounters($userId: String!) {
             encounters(userId: $userId) {
               userId
               encounterName
