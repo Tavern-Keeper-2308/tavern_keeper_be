@@ -59,3 +59,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
 end
+
+gem 'opentelemetry-sdk'
+gem 'opentelemetry-exporter-otlp'
+gem 'opentelemetry-instrumentation-all'
