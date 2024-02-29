@@ -1,14 +1,9 @@
 require 'opentelemetry/sdk'
-require 'opentelemetry/exporter/honeycomb'
+require 'opentelemetry/exporter/otlp'
+require 'opentelemetry/instrumentation/all'
 
 OpenTelemetry::SDK.configure do |c|
   c.service_name = ''
-  c.add_span_processor(
-    OpenTelemetry::SDK::Trace::Export::BatchSpanProcessor.new(
-      OpenTelemetry::Exporter::Honeycomb::Exporter.new(
-        writekey: '',
-        dataset: ''
-      )
-    )
-  )
+  c.use_all 'OpenTelemetry::Instrumentation::All'
+  c.add_exporter(OpenTelemetry::Exporter::OTLP::Exporter.new(endpoint: ''))
 end
