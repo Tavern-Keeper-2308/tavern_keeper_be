@@ -1,0 +1,23 @@
+databases:
+  - name: tavern_keeper_be_lite
+    databaseName: tavern_keeper_be_lite
+    user: Xander Hendry
+    plan: free
+
+services:
+  - type: web
+    name: tavern_keeper_be_lite
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tavern_keeper_be_lite
+          property: postgresql://tavern_keeper_be_lite_user:S0xDTKk14m51HNTKy5mfAE5xrAUjpkYo@dpg-crm947bv2p9s739k5ju0-a/tavern_keeper_be_lite
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
